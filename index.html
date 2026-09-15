@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finca Los Robles | San Cristóbal Alta Verapaz</title>
+  <meta name="description" content="Finca Los Robles en San Cristóbal Alta Verapaz, Guatemala. Café de especialidad de altura, licor artesanal de guayaba fresa y experiencias de origen." />
+  <meta property="og:title" content="Finca Los Robles | San Cristóbal Alta Verapaz" />
+  <meta property="og:description" content="Café de especialidad, licor artesanal y tradición cafetalera en el corazón de Alta Verapaz." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Playfair Display (Títulos) & Poppins (Cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 Icons vía CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS vía CDN con configuración personalizada de colores y fuentes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            robles: {
+              forest: '#1a382b',     // Verde bosque profundo
+              forestLight: '#244e3c',
+              leaf: '#2d6148',       // Verde hoja de cafetal
+              earth: '#3e2a1d',      // Tono tierra de montaña
+              coffee: '#5c3e29',     // Café tostado
+              wood: '#8c6239',       // Madera de roble
+              cream: '#faf7f2',      // Crema artesanal fondo
+              sand: '#f2eae0',       // Arena cálida
+              gold: '#cba358',       // Dorado suave artesanal
+              goldDark: '#b28b3f',   // Dorado acento
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Poppins"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #faf7f2;
+      color: #2c2520;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .hero-gradient {
+      background: linear-gradient(180deg, rgba(26, 56, 43, 0.84) 0%, rgba(26, 56, 43, 0.72) 40%, rgba(30, 24, 20, 0.9) 100%);
+    }
+    .card-hover {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -10px rgba(26, 56, 43, 0.15);
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #faf7f2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cba358;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b28b3f;
+    }
+  </style>
+</head>
+<body class="bg-robles-cream text-neutral-800 antialiased selection:bg-robles-gold/30 selection:text-robles-forest flex flex-col min-h-screen">
+
+  <!-- ========================================================= -->
+  <!-- 1. ENCABEZADO Y NAVEGACIÓN (Sticky Navbar)               -->
+  <!-- ========================================================= -->
+  <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 bg-robles-forest/95 backdrop-blur-md text-white border-b border-white/10 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logotipo / Nombre Finca -->
+        <a href="#hero" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-robles-gold rounded-lg p-1">
+          <div class="w-11 h-11 rounded-full bg-robles-forestLight border border-robles-gold/40 flex items-center justify-center text-robles-gold shadow-inner group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-tree text-xl"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-robles-gold transition-colors">
+              Finca Los Robles
+            </span>
+            <span class="text-[10px] sm:text-xs text-robles-gold/90 font-medium tracking-widest uppercase">
+              San Cristóbal Alta Verapaz
+            </span>
+          </div>
+        </a>
+
+        <!-- Menú de Navegación de Escritorio -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium">
+          <a href="#hero" class="nav-link px-3 py-2 text-white/90 hover:text-robles-gold transition-colors" data-i18n="nav_home">Inicio</a>
+          <a href="#historia" class="nav-link px-3 py-2 text-white/90 hover:text-robles-gold transition-colors" data-i18n="nav_history">Historia</a>
+          <a href="#servicios" class="nav-link px-3 py-2 text-white/90 hover:text-robles-gold transition-colors" data-i18n="nav_services">Qué Hacemos</a>
+          <a href="#galeria" class="nav-link px-3 py-2 text-white/90 hover:text-robles-gold transition-colors" data-i18n="nav_gallery">Galería</a>
+          <a href="#contacto" class="nav-link px-3 py-2 text-white/90 hover:text-robles-gold transition-colors" data-i18n="nav_contact">Contacto</a>
+        </nav>
+
+        <!-- Selector de Idioma [ ES | EN ] y CTA -->
+        <div class="flex items-center gap-3">
+          <div class="inline-flex items-center p-1 rounded-full bg-white/10 border border-white/15 text-xs font-semibold backdrop-blur-sm" role="group" aria-label="Selector de Idioma">
+            <button id="btn-lang-es" onclick="setLanguage('es')" class="px-2.5 py-1 rounded-full transition-all duration-200 bg-robles-gold text-robles-forest font-bold shadow-sm">
+              ES
+            </button>
+            <button id="btn-lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-full transition-all duration-200 text-white/80 hover:text-white">
+              EN
+            </button>
+          </div>
+
+          <!-- Botón de Contacto Rápido -->
+          <a href="#contacto" class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-robles-gold hover:bg-robles-goldDark text-robles-forest text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm">
+            <i class="fa-regular fa-paper-plane text-xs"></i>
+            <span data-i18n="btn_header_contact">Visítanos</span>
+          </a>
+
+          <!-- Botón Menú Móvil -->
+          <button id="btn-mobile-menu" type="button" class="md:hidden p-2.5 rounded-lg text-white/90 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-robles-gold" aria-expanded="false" aria-label="Abrir Menú">
+            <i id="icon-mobile-menu" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden bg-robles-forest border-b border-white/10 px-4 pt-2 pb-6 space-y-2 shadow-2xl transition-all">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_home">Inicio</a>
+      <a href="#historia" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_history">Historia</a>
+      <a href="#servicios" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_services">Qué Hacemos</a>
+      <a href="#galeria" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_gallery">Galería</a>
+      <a href="#contacto" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_contact">Contacto</a>
+      
+      <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
+        <a href="https://wa.me/50200000000?text=Hola%20Finca%20Los%20Robles" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-medium text-sm transition-colors">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span data-i18n="btn_whatsapp">WhatsApp Directo</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================= -->
+  <!-- 2. SECCIÓN HERO (Banner Principal)                       -->
+  <!-- ========================================================= -->
+  <section id="hero" class="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
+    <!-- Imagen de fondo (Reemplazable por foto del entorno real de Finca Los Robles) -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=2000&q=80"
+        alt="Entorno natural Finca Los Robles Alta Verapaz"
+        class="w-full h-full object-cover object-center transform scale-105"
+      />
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center">
+      
+      <!-- Insignia Superior -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 border border-robles-gold/50 backdrop-blur-md text-robles-gold text-xs sm:text-sm font-medium mb-6 shadow-lg">
+        <i class="fa-solid fa-mountain-sun"></i>
+        <span data-i18n="hero_badge">Café de Altura & Tradición Artesanal</span>
+      </div>
+
+      <!-- Título Principal -->
+      <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white mb-6 max-w-4xl" data-i18n="hero_title">
+        Tradición y Pasión en San Cristóbal Alta Verapaz
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="text-base sm:text-lg lg:text-xl text-robles-sand max-w-2xl font-light leading-relaxed mb-10 text-balance" data-i18n="hero_subtitle">
+        Cultivamos café de especialidad bajo sombra, procesamos con esmero artesanal y creamos sabores únicos en la cuna del bosque nuboso guatemalteco.
+      </p>
+
+      <!-- Botones de Acción (CTA) -->
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+        <a href="#historia" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-robles-gold hover:bg-robles-goldDark text-robles-forest font-semibold text-sm sm:text-base tracking-wide shadow-xl transition-all hover:scale-105">
+          <i class="fa-solid fa-book-open"></i>
+          <span data-i18n="hero_cta_history">Conoce Nuestra Historia</span>
+        </a>
+        <a href="#contacto" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 text-white font-medium text-sm sm:text-base tracking-wide backdrop-blur-md shadow-lg transition-all hover:scale-105">
+          <i class="fa-solid fa-envelope"></i>
+          <span data-i18n="hero_cta_contact">Contáctanos</span>
+        </a>
+      </div>
+
+      <!-- Métricas Destacadas del Hero -->
+      <div class="mt-16 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-12 text-center w-full max-w-3xl">
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl sm:text-3xl font-bold text-robles-gold">1,450+ m</span>
+          <span class="text-xs sm:text-sm text-white/80" data-i18n="stat_altitude">Altitud Promedio</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl sm:text-3xl font-bold text-robles-gold">100%</span>
+          <span class="text-xs sm:text-sm text-white/80" data-i18n="stat_harvest">Cosecha Seleccionada</span>
+        </div>
+        <div class="col-span-2 sm:col-span-1 flex flex-col">
+          <span class="font-serif text-2xl sm:text-3xl font-bold text-robles-gold">Sostenible</span>
+          <span class="text-xs sm:text-sm text-white/80" data-i18n="stat_process">Cultivo Bajo Sombra</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Indicador de Desplazamiento -->
+    <a href="#historia" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/60 hover:text-robles-gold transition-colors animate-bounce" aria-label="Ir a Historia">
+      <i class="fa-solid fa-angles-down text-lg"></i>
+    </a>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 3. SECCIÓN SOBRE NOSOTROS / NUESTRA HISTORIA             -->
+  <!-- ========================================================= -->
+  <section id="historia" class="py-20 lg:py-28 bg-robles-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Encabezado de Sección -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-robles-leaf font-semibold text-xs uppercase tracking-widest mb-2">
+          <i class="fa-solid fa-leaf"></i>
+          <span data-i18n="history_tag">Nuestra Herencia</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-robles-forest tracking-tight" data-i18n="history_title">
+          El Legado de Finca Los Robles
+        </h2>
+        <div class="w-16 h-1 bg-robles-gold mx-auto my-4 rounded-full"></div>
+        <p class="text-neutral-600 text-base sm:text-lg leading-relaxed" data-i18n="history_subtitle">
+          Donde la niebla de Alta Verapaz abraza la tierra fértil para dar vida a frutos de calidad excepcional.
+        </p>
+      </div>
+
+      <!-- Diseño de 2 Columnas -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Columna Izquierda: Texto y Pilares -->
+        <div class="lg:col-span-7 space-y-6 text-neutral-700 leading-relaxed">
+          <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-robles-earth" data-i18n="history_h3">
+            Raíces en el corazón de San Cristóbal Alta Verapaz
+          </h3>
+          <p class="text-base" data-i18n="history_p1">
+            Enclavada en las montañas verdes de San Cristóbal Verapaz, Finca Los Robles nace de una profunda vocación por la tierra y el respeto a la biodiversidad. El microclima privilegiado de la región —caracterizado por su místico “chipi-chipi” (llovizna suave constante) y suelos ricos en minerales volcánicos— brinda el entorno perfecto para la maduración lenta y dulce de nuestros frutos.
+          </p>
+          <p class="text-base" data-i18n="history_p2">
+            No somos solo una finca cafetalera; somos guardianes de un legado que combina saberes tradicionales transmitidos por generaciones con métodos contemporáneos de control de calidad. Desde la poda cuidadosa de robles nativos hasta la cosecha manual grano por grano, cada etapa de nuestra labor honra la dignidad de nuestra gente y el equilibrio del ecosistema.
+          </p>
+
+          <!-- 3 Pilares Destacados -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div class="p-4 rounded-xl bg-white border border-neutral-200/80 shadow-sm flex flex-col">
+              <div class="w-10 h-10 rounded-lg bg-robles-forest/10 text-robles-forest flex items-center justify-center mb-3 text-lg">
+                <i class="fa-solid fa-cloud-sun"></i>
+              </div>
+              <h4 class="font-bold text-robles-forest text-sm mb-1" data-i18n="pillar1_title">Microclima Único</h4>
+              <p class="text-xs text-neutral-600" data-i18n="pillar1_desc">Bosque nuboso con temperatura templada que intensifica azúcares naturales.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white border border-neutral-200/80 shadow-sm flex flex-col">
+              <div class="w-10 h-10 rounded-lg bg-robles-gold/20 text-robles-goldDark flex items-center justify-center mb-3 text-lg">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <h4 class="font-bold text-robles-forest text-sm mb-1" data-i18n="pillar2_title">Proceso Artesanal</h4>
+              <p class="text-xs text-neutral-600" data-i18n="pillar2_desc">Selección manual en cereza óptima y secado natural en patios.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white border border-neutral-200/80 shadow-sm flex flex-col">
+              <div class="w-10 h-10 rounded-lg bg-robles-leaf/15 text-robles-leaf flex items-center justify-center mb-3 text-lg">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h4 class="font-bold text-robles-forest text-sm mb-1" data-i18n="pillar3_title">Agroforestería</h4>
+              <p class="text-xs text-neutral-600" data-i18n="pillar3_desc">Cultivo bajo sombra de robles que protege flora y fauna nativa.</p>
+            </div>
+          </div>
+
+          <!-- Cita Destacada -->
+          <div class="p-5 rounded-2xl bg-robles-sand/70 border-l-4 border-robles-gold text-robles-earth italic text-sm">
+            <p data-i18n="history_quote">
+              "Cada taza cuenta la historia de nuestras montañas, la paciencia del roble y el esmero con el que cuidamos cada detalle."
+            </p>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Composición Fotográfica -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
+              <img
+                src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
+                alt="Granos de café maduros en Finca Los Robles"
+                class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="hidden sm:block absolute -bottom-8 -left-8 w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+              <img
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
+                alt="Café tostado artesanal"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="absolute -top-4 -right-4 bg-robles-forest text-white p-3 rounded-full shadow-lg border border-robles-gold/50 flex flex-col items-center justify-center w-20 h-20 text-center">
+              <span class="text-[10px] uppercase font-bold text-robles-gold" data-i18n="origin_stamp">Origen</span>
+              <span class="text-xs font-bold font-serif">100% GUA</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 4. SECCIÓN "¿QUÉ HACEMOS?" (Productos y Servicios)       -->
+  <!-- ========================================================= -->
+  <section id="servicios" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Encabezado de Sección -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-robles-leaf font-semibold text-xs uppercase tracking-widest mb-2">
+          <i class="fa-solid fa-mug-hot"></i>
+          <span data-i18n="services_tag">Nuestra Pasión Hecha Realidad</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-robles-forest tracking-tight" data-i18n="services_title">
+          ¿Qué Hacemos en Finca Los Robles?
+        </h2>
+        <div class="w-16 h-1 bg-robles-gold mx-auto my-4 rounded-full"></div>
+        <p class="text-neutral-600 text-base sm:text-lg" data-i18n="services_subtitle">
+          Desde granos selectos de especialidad hasta derivados artesanales exclusivos y experiencias de catación profesional.
+        </p>
+      </div>
+
+      <!-- Tarjetas de Productos y Servicios -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Tarjeta 1: Café de Especialidad -->
+        <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-neutral-200/80 flex flex-col group">
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+              alt="Café de Especialidad Finca Los Robles"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute top-3 left-3 bg-robles-forest/90 text-robles-gold text-xs px-3 py-1 rounded-full font-medium tracking-wide">
+              <i class="fa-solid fa-award mr-1"></i> <span data-i18n="card1_badge">Especialidad</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-robles-forest text-white flex items-center justify-center text-xl mb-4 -mt-10 relative z-10 shadow-md border-2 border-white">
+              <i class="fa-solid fa-coffee"></i>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-robles-forest mb-3" data-i18n="card1_title">
+              Café de Especialidad
+            </h3>
+            <p class="text-neutral-600 text-sm leading-relaxed mb-6 flex-1" data-i18n="card1_desc">
+              Selección estricta de varietales arábicas cosechadas en su madurez óptima. Procesos lavado y honey con perfiles balanceados, notas florales, caramelo y chocolate característicos de Verapaz.
+            </p>
+            <ul class="text-xs text-neutral-600 space-y-2 pt-4 border-t border-neutral-200">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-robles-leaf"></i>
+                <span data-i18n="card1_point1">Tuestes personalizados en grano o molido</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-robles-leaf"></i>
+                <span data-i18n="card1_point2">Trazabilidad desde el lote hasta tu taza</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Producción Artesanal (Licor de Guayaba Fresa, Cold Brew) -->
+        <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-neutral-200/80 flex flex-col group">
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80"
+              alt="Producción artesanal licor de guayaba fresa"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute top-3 left-3 bg-robles-goldDark/90 text-white text-xs px-3 py-1 rounded-full font-medium tracking-wide">
+              <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> <span data-i18n="card2_badge">Innovación de Finca</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-robles-coffee text-white flex items-center justify-center text-xl mb-4 -mt-10 relative z-10 shadow-md border-2 border-white">
+              <i class="fa-solid fa-wine-bottle"></i>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-robles-forest mb-3" data-i18n="card2_title">
+              Producción Artesanal & Derivados
+            </h3>
+            <p class="text-neutral-600 text-sm leading-relaxed mb-6 flex-1" data-i18n="card2_desc">
+              Elaboramos nuestro aclamado Licor de Guayaba Fresa, una fruta exótica cultivada en nuestras laderas. Además producimos Cold Brew concentrado de extracción lenta e infusiones de cáscara de café.
+            </p>
+            <ul class="text-xs text-neutral-600 space-y-2 pt-4 border-t border-neutral-200">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-robles-leaf"></i>
+                <span data-i18n="card2_point1">Licor de Guayaba Fresa 100% natural</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-robles-leaf"></i>
+                <span data-i18n="card2_point2">Cold Brew listo para disfrutar y coctelería</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3: Experiencia & Laboratorio -->
+        <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-neutral-200/80 flex flex-col group">
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=800&q=80"
+              alt="Laboratorio de catación y análisis de café"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute top-3 left-3 bg-robles-forest/90 text-robles-gold text-xs px-3 py-1 rounded-full font-medium tracking-wide">
+              <i class="fa-solid fa-microscope mr-1"></i> <span data-i18n="card3_badge">Calidad SCA</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-robles-leaf text-white flex items-center justify-center text-xl mb-4 -mt-10 relative z-10 shadow-md border-2 border-white">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-robles-forest mb-3" data-i18n="card3_title">
+              Experiencia & Laboratorio
+            </h3>
+            <p class="text-neutral-600 text-sm leading-relaxed mb-6 flex-1" data-i18n="card3_desc">
+              Espacio dedicado al análisis físico, curva de tueste y catación sensorial. Ofrecemos catas guiadas, capacitación técnica y tours vivenciales por nuestros cafetales y senderos naturales.
+            </p>
+            <ul class="text-xs text-neutral-600 space-y-2 pt-4 border-t border-neutral-200">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-robles-leaf"></i>
+                <span data-i18n="card3_point1">Sesiones de catación y perfiles sensoriales</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-robles-leaf"></i>
+                <span data-i18n="card3_point2">Tours y visitas agronómicas en finca</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner de Llamada a la Acción -->
+      <div class="mt-14 p-8 rounded-3xl bg-robles-forest text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="space-y-2 text-center md:text-left">
+          <h4 class="font-serif text-2xl font-bold text-robles-gold" data-i18n="cta_banner_title">¿Deseas degustar nuestros productos o visitarnos?</h4>
+          <p class="text-sm text-white/80 max-w-xl" data-i18n="cta_banner_desc">Escríbenos para pedidos especiales de café tostado, botellas de licor artesanal o programar tu experiencia en la finca.</p>
+        </div>
+        <a href="#contacto" class="px-6 py-3 rounded-full bg-robles-gold hover:bg-robles-goldDark text-robles-forest font-semibold text-sm tracking-wide transition-all shadow-md shrink-0">
+          <span data-i18n="cta_banner_btn">Hacer un Pedido / Reserva</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 5. SECCIÓN GALERÍA DE FOTOS (Responsive Grid + Lightbox)  -->
+  <!-- ========================================================= -->
+  <section id="galeria" class="py-20 lg:py-28 bg-robles-sand/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Encabezado de Sección -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 text-robles-leaf font-semibold text-xs uppercase tracking-widest mb-2">
+          <i class="fa-solid fa-camera"></i>
+          <span data-i18n="gallery_tag">Postales de Nuestra Tierra</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-robles-forest tracking-tight" data-i18n="gallery_title">
+          Galería Finca Los Robles
+        </h2>
+        <div class="w-16 h-1 bg-robles-gold mx-auto my-4 rounded-full"></div>
+        <p class="text-neutral-600 text-base sm:text-lg" data-i18n="gallery_subtitle">
+          Un vistazo visual a nuestros cafetales, cosecha, procesos de beneficio y la exuberante naturaleza de San Cristóbal Verapaz.
+        </p>
+      </div>
+
+      <!-- Filtros de Categoría -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs font-medium">
+        <button onclick="filterGallery('all')" class="gallery-filter-btn active px-4 py-2 rounded-full bg-robles-forest text-white transition-all shadow-sm" data-category="all" data-i18n="filter_all">Todos</button>
+        <button onclick="filterGallery('cafetal')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="cafetal" data-i18n="filter_farm">Cafetal & Naturaleza</button>
+        <button onclick="filterGallery('proceso')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="proceso" data-i18n="filter_process">Cosecha & Proceso</button>
+        <button onclick="filterGallery('taza')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="taza" data-i18n="filter_products">Café & Productos</button>
+      </div>
+
+      <!-- Cuadrícula de Fotos -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Foto 1 -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="cafetal" onclick="openLightbox(this)">
+          <img
+            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80"
+            alt="Cafetales bajo sombra y neblina en Finca Los Robles"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_farm">Cafetal</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_1">Niebla matutina sobre los robles y cafetales</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="proceso" onclick="openLightbox(this)">
+          <img
+            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
+            alt="Cerezas de café maduras listas para corte"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_harvest">Cosecha</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_2">Maduración óptima en cereza de altura</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="proceso" onclick="openLightbox(this)">
+          <img
+            src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=80"
+            alt="Secado de café en pergamino al sol"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_benefit">Beneficio</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_3">Secado solar en patios tradicionales</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
+        <!-- Foto 4 -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza" onclick="openLightbox(this)">
+          <img
+            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
+            alt="Taza de café humeante en la finca"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_tasting">Experiencia</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_4">La taza perfecta con notas achocolatadas</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
+        <!-- Foto 5 -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza" onclick="openLightbox(this)">
+          <img
+            src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80"
+            alt="Botella de licor artesanal y cold brew"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_craft">Artesanal</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_5">Licor de guayaba fresa y macerados</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
+        <!-- Foto 6 -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="cafetal" onclick="openLightbox(this)">
+          <img
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80"
+            alt="Bosque nuboso y vegetación en Alta Verapaz"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_nature">Entorno</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_6">Santuario natural en San Cristóbal Verapaz</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal Lightbox para Ampliar Fotos de la Galería -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeLightbox(event)">
+    <div class="relative max-w-4xl max-h-[90vh] w-full flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox(event)" class="absolute -top-12 right-0 text-white/80 hover:text-white text-2xl p-2 focus:outline-none" aria-label="Cerrar Imagen">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Vista previa" class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-white/20" />
+      <p id="lightbox-caption" class="text-white text-center mt-4 text-sm font-medium"></p>
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- 6. SECCIÓN DE CONTACTO Y UBICACIÓN                       -->
+  <!-- ========================================================= -->
+  <section id="contacto" class="py-20 lg:py-28 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Encabezado de Sección -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-robles-leaf font-semibold text-xs uppercase tracking-widest mb-2">
+          <i class="fa-solid fa-location-dot"></i>
+          <span data-i18n="contact_tag">Conectemos</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-robles-forest tracking-tight" data-i18n="contact_title">
+          Contacto y Ubicación
+        </h2>
+        <div class="w-16 h-1 bg-robles-gold mx-auto my-4 rounded-full"></div>
+        <p class="text-neutral-600 text-base sm:text-lg" data-i18n="contact_subtitle">
+          Estamos a tu disposición para pedidos al por mayor o menor, distribución, consultas técnicas o coordinar tu visita.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Tarjeta de Información y Canales Directos -->
+        <div class="lg:col-span-5 space-y-8 bg-robles-cream p-8 sm:p-10 rounded-3xl border border-neutral-200/80 shadow-sm">
+          
+          <div>
+            <h3 class="font-serif text-2xl font-bold text-robles-forest mb-3" data-i18n="c_info_title">
+              Finca Los Robles
+            </h3>
+            <p class="text-neutral-600 text-sm leading-relaxed" data-i18n="c_info_desc">
+              Ubicada estratégicamente en las laderas boscosas de San Cristóbal Alta Verapaz, cuna de clima fresco y tradiciones de alta montaña.
+            </p>
+          </div>
+
+          <!-- Lista de Contacto -->
+          <div class="space-y-5 text-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-map-pin"></i>
+              </div>
+              <div>
+                <strong class="block text-robles-forest" data-i18n="c_loc_label">Ubicación:</strong>
+                <span class="text-neutral-600" data-i18n="c_loc_val">San Cristóbal Alta Verapaz, Guatemala, C.A.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+              </div>
+              <div>
+                <strong class="block text-robles-forest" data-i18n="c_wa_label">WhatsApp / Teléfono:</strong>
+                <a href="https://wa.me/50200000000" target="_blank" rel="noopener noreferrer" class="text-robles-leaf hover:underline font-medium">
+                  +502 0000-0000 / Consultas Directas
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <strong class="block text-robles-forest" data-i18n="c_email_label">Correo Electrónico:</strong>
+                <a href="mailto:info@fincalosrobles.gt" class="text-robles-leaf hover:underline">
+                  info@fincalosrobles.gt
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <strong class="block text-robles-forest" data-i18n="c_hours_label">Atención y Visitas:</strong>
+                <span class="text-neutral-600" data-i18n="c_hours_val">Lunes a Sábado: 8:00 AM – 5:00 PM (Previa Cita)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón de WhatsApp -->
+          <div class="pt-4 border-t border-neutral-200">
+            <a href="https://wa.me/50200000000?text=Hola%20Finca%20Los%20Robles,%20deseo%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all shadow-md hover:shadow-lg">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span data-i18n="c_wa_btn">Contactar vía WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Redes Sociales -->
+          <div class="flex items-center gap-3 pt-2">
+            <span class="text-xs text-neutral-500 font-medium mr-2" data-i18n="c_social_label">Síguenos:</span>
+            <a href="#" class="w-9 h-9 rounded-full bg-white border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-robles-forest hover:border-robles-gold transition-colors" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-robles-forest hover:border-robles-gold transition-colors" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-robles-forest hover:border-robles-gold transition-colors" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Formulario de Contacto -->
+        <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-neutral-200/80 shadow-lg">
+          <h3 class="font-serif text-2xl font-bold text-robles-forest mb-2" data-i18n="form_title">
+            Envíanos un Mensaje
+          </h3>
+          <p class="text-neutral-500 text-sm mb-6" data-i18n="form_subtitle">
+            Completa el siguiente formulario y nuestro equipo te responderá a la brevedad.
+          </p>
+
+          <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="form-name" class="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5" data-i18n="f_name">
+                  Nombre Completo *
+                </label>
+                <input
+                  type="text"
+                  id="form-name"
+                  required
+                  placeholder="Ej. Carlos Mendoza"
+                  class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-robles-forest focus:ring-2 focus:ring-robles-forest/20 text-sm transition-all outline-none"
+                />
+              </div>
+
+              <div>
+                <label for="form-email" class="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5" data-i18n="f_email">
+                  Correo Electrónico *
+                </label>
+                <input
+                  type="email"
+                  id="form-email"
+                  required
+                  placeholder="ejemplo@correo.com"
+                  class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-robles-forest focus:ring-2 focus:ring-robles-forest/20 text-sm transition-all outline-none"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="form-subject" class="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5" data-i18n="f_subject">
+                Motivo de Consulta
+              </label>
+              <select
+                id="form-subject"
+                class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-robles-forest focus:ring-2 focus:ring-robles-forest/20 text-sm transition-all outline-none bg-white"
+              >
+                <option value="cafe" data-i18n="opt_coffee">Compra de Café de Especialidad</option>
+                <option value="licor" data-i18n="opt_liquor">Licor Artesanal de Guayaba Fresa</option>
+                <option value="coldbrew" data-i18n="opt_coldbrew">Cold Brew y Derivados</option>
+                <option value="visita" data-i18n="opt_tour">Visitas a la Finca y Cataciones</option>
+                <option value="otro" data-i18n="opt_other">Otra Consulta General</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="form-message" class="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5" data-i18n="f_message">
+                Mensaje o Pedido *
+              </label>
+              <textarea
+                id="form-message"
+                rows="4"
+                required
+                placeholder="¿En qué podemos servirte hoy?..."
+                class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-robles-forest focus:ring-2 focus:ring-robles-forest/20 text-sm transition-all outline-none resize-y"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="form-submit-btn"
+              class="w-full py-4 px-6 rounded-xl bg-robles-forest hover:bg-robles-forestLight text-white font-semibold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+              <span id="submit-btn-text" data-i18n="f_btn_send">Enviar Mensaje</span>
+            </button>
+
+            <!-- Banner de Confirmación de Envío -->
+            <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-sm flex items-center gap-3">
+              <i class="fa-solid fa-circle-check text-emerald-600 text-xl shrink-0"></i>
+              <div>
+                <strong class="block font-semibold" data-i18n="f_success_title">¡Mensaje Enviado con Éxito!</strong>
+                <span data-i18n="f_success_desc">Gracias por comunicarte con Finca Los Robles. Nos pondremos en contacto contigo pronto.</span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 7. PIE DE PÁGINA (Footer)                                -->
+  <!-- ========================================================= -->
+  <footer class="bg-robles-forest text-white/80 pt-16 pb-12 border-t border-white/10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-robles-gold border border-robles-gold/30">
+              <i class="fa-solid fa-tree text-lg"></i>
+            </div>
+            <span class="font-serif text-xl font-bold text-white tracking-tight">
+              Finca Los Robles
+            </span>
+          </div>
+          <p class="text-sm text-white/70 leading-relaxed" data-i18n="footer_bio">
+            Caficultura de alta precisión, respeto agroforestal y creaciones artesanales con identidad en San Cristóbal Alta Verapaz, Guatemala.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-base font-bold text-white uppercase tracking-wider mb-4" data-i18n="footer_links_title">
+            Enlaces Rápidos
+          </h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#hero" class="hover:text-robles-gold transition-colors" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="#historia" class="hover:text-robles-gold transition-colors" data-i18n="nav_history">Nuestra Historia</a></li>
+            <li><a href="#servicios" class="hover:text-robles-gold transition-colors" data-i18n="nav_services">Productos y Servicios</a></li>
+            <li><a href="#galeria" class="hover:text-robles-gold transition-colors" data-i18n="nav_gallery">Galería Fotográfica</a></li>
+            <li><a href="#contacto" class="hover:text-robles-gold transition-colors" data-i18n="nav_contact">Contacto y Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-base font-bold text-white uppercase tracking-wider mb-4" data-i18n="footer_products_title">
+            Nuestros Pilares
+          </h4>
+          <ul class="space-y-2.5 text-sm text-white/70">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-check text-robles-gold text-xs"></i>
+              <span data-i18n="foot_item1">Café de Altura Estrictamente Duro (SHB)</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-check text-robles-gold text-xs"></i>
+              <span data-i18n="foot_item2">Licor Artesanal de Guayaba Fresa</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-check text-robles-gold text-xs"></i>
+              <span data-i18n="foot_item3">Cold Brew y Maceraciones</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-check text-robles-gold text-xs"></i>
+              <span data-i18n="foot_item4">Laboratorio & Catación Sensorial</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h4 class="font-serif text-base font-bold text-white uppercase tracking-wider mb-2" data-i18n="footer_location_title">
+            San Cristóbal Verapaz
+          </h4>
+          <p class="text-sm text-white/70">
+            Alta Verapaz, Guatemala.<br>
+            Zona de bosque nuboso y rica tradición cafetera.
+          </p>
+          <a href="https://wa.me/50200000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold tracking-wider transition-colors">
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+            <span>Chat WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
+        <p>© <span id="current-year"></span> Finca Los Robles. <span data-i18n="footer_rights">Todos los derechos reservados. San Cristóbal Alta Verapaz, Guatemala.</span></p>
+        <div class="flex items-center gap-6">
+          <a href="#hero" class="hover:text-robles-gold transition-colors" data-i18n="btn_back_top">Volver arriba ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT: MOTOR BILINGÜE, LIGHTBOX & FORMULARIO         -->
+  <!-- ========================================================= -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Diccionario Bilingüe Completo (Español / English)
+    const translations = {
+      es: {
+        nav_home: "Inicio",
+        nav_history: "Historia",
+        nav_services: "Qué Hacemos",
+        nav_gallery: "Galería",
+        nav_contact: "Contacto",
+        btn_header_contact: "Visítanos",
+        btn_whatsapp: "WhatsApp Directo",
+        hero_badge: "Café de Altura & Tradición Artesanal",
+        hero_title: "Tradición y Pasión en San Cristóbal Alta Verapaz",
+        hero_subtitle: "Cultivamos café de especialidad bajo sombra, procesamos con esmero artesanal y creamos sabores únicos en la cuna del bosque nuboso guatemalteco.",
+        hero_cta_history: "Conoce Nuestra Historia",
+        hero_cta_contact: "Contáctanos",
+        stat_altitude: "Altitud Promedio",
+        stat_harvest: "Cosecha Seleccionada",
+        stat_process: "Cultivo Bajo Sombra",
+        history_tag: "Nuestra Herencia",
+        history_title: "El Legado de Finca Los Robles",
+        history_subtitle: "Donde la niebla de Alta Verapaz abraza la tierra fértil para dar vida a frutos de calidad excepcional.",
+        history_h3: "Raíces en el corazón de San Cristóbal Alta Verapaz",
+        history_p1: "Enclavada en las montañas verdes de San Cristóbal Verapaz, Finca Los Robles nace de una profunda vocación por la tierra y el respeto a la biodiversidad. El microclima privilegiado de la región —caracterizado por su místico “chipi-chipi” (llovizna suave constante) y suelos ricos en minerales volcánicos— brinda el entorno perfecto para la maduración lenta y dulce de nuestros frutos.",
+        history_p2: "No somos solo una finca cafetalera; somos guardianes de un legado que combina saberes tradicionales transmitidos por generaciones con métodos contemporáneos de control de calidad. Desde la poda cuidadosa de robles nativos hasta la cosecha manual grano por grano, cada etapa de nuestra labor honra la dignidad de nuestra gente y el equilibrio del ecosistema.",
+        pillar1_title: "Microclima Único",
+        pillar1_desc: "Bosque nuboso con temperatura templada que intensifica azúcares naturales.",
+        pillar2_title: "Proceso Artesanal",
+        pillar2_desc: "Selección manual en cereza óptima y secado natural en patios.",
+        pillar3_title: "Agroforestería",
+        pillar3_desc: "Cultivo bajo sombra de robles que protege flora y fauna nativa.",
+        history_quote: '"Cada taza cuenta la historia de nuestras montañas, la paciencia del roble y el esmero con el que cuidamos cada detalle."',
+        origin_stamp: "Origen",
+        services_tag: "Nuestra Pasión Hecha Realidad",
+        services_title: "¿Qué Hacemos en Finca Los Robles?",
+        services_subtitle: "Desde granos selectos de especialidad hasta derivados artesanales exclusivos y experiencias de catación profesional.",
+        card1_badge: "Especialidad",
+        card1_title: "Café de Especialidad",
+        card1_desc: "Selección estricta de varietales arábicas cosechadas en su madurez óptima. Procesos lavado y honey con perfiles balanceados, notas florales, caramelo y chocolate característicos de Verapaz.",
+        card1_point1: "Tuestes personalizados en grano o molido",
+        card1_point2: "Trazabilidad desde el lote hasta tu taza",
+        card2_badge: "Innovación de Finca",
+        card2_title: "Producción Artesanal & Derivados",
+        card2_desc: "Elaboramos nuestro aclamado Licor de Guayaba Fresa, una fruta exótica cultivada en nuestras laderas. Además producimos Cold Brew concentrado de extracción lenta e infusiones de cáscara de café.",
+        card2_point1: "Licor de Guayaba Fresa 100% natural",
+        card2_point2: "Cold Brew listo para disfrutar y coctelería",
+        card3_badge: "Calidad SCA",
+        card3_title: "Experiencia & Laboratorio",
+        card3_desc: "Espacio dedicado al análisis físico, curva de tueste y catación sensorial. Ofrecemos catas guiadas, capacitación técnica y tours vivenciales por nuestros cafetales y senderos naturales.",
+        card3_point1: "Sesiones de catación y perfiles sensoriales",
+        card3_point2: "Tours y visitas agronómicas en finca",
+        cta_banner_title: "¿Deseas degustar nuestros productos o visitarnos?",
+        cta_banner_desc: "Escríbenos para pedidos especiales de café tostado, botellas de licor artesanal o programar tu experiencia en la finca.",
+        cta_banner_btn: "Hacer un Pedido / Reserva",
+        gallery_tag: "Postales de Nuestra Tierra",
+        gallery_title: "Galería Finca Los Robles",
+        gallery_subtitle: "Un vistazo visual a nuestros cafetales, cosecha, procesos de beneficio y la exuberante naturaleza de San Cristóbal Verapaz.",
+        filter_all: "Todos",
+        filter_farm: "Cafetal & Naturaleza",
+        filter_process: "Cosecha & Proceso",
+        filter_products: "Café & Productos",
+        g_cat_farm: "Cafetal",
+        g_cap_1: "Niebla matutina sobre los robles y cafetales",
+        g_cat_harvest: "Cosecha",
+        g_cap_2: "Maduración óptima en cereza de altura",
+        g_cat_benefit: "Beneficio",
+        g_cap_3: "Secado solar en patios tradicionales",
+        g_cat_tasting: "Experiencia",
+        g_cap_4: "La taza perfecta con notas achocolatadas",
+        g_cat_craft: "Artesanal",
+        g_cap_5: "Licor de guayaba fresa y macerados",
+        g_cat_nature: "Entorno",
+        g_cap_6: "Santuario natural en San Cristóbal Verapaz",
+        g_click_zoom: "Click para ampliar",
+        contact_tag: "Conectemos",
+        contact_title: "Contacto y Ubicación",
+        contact_subtitle: "Estamos a tu disposición para pedidos al por mayor o menor, distribución, consultas técnicas o coordinar tu visita.",
+        c_info_title: "Finca Los Robles",
+        c_info_desc: "Ubicada estratégicamente en las laderas boscosas de San Cristóbal Alta Verapaz, cuna de clima fresco y tradiciones de alta montaña.",
+        c_loc_label: "Ubicación:",
+        c_loc_val: "San Cristóbal Alta Verapaz, Guatemala, C.A.",
+        c_wa_label: "WhatsApp / Teléfono:",
+        c_email_label: "Correo Electrónico:",
+        c_hours_label: "Atención y Visitas:",
+        c_hours_val: "Lunes a Sábado: 8:00 AM – 5:00 PM (Previa Cita)",
+        c_wa_btn: "Contactar vía WhatsApp",
+        c_social_label: "Síguenos:",
+        form_title: "Envíanos un Mensaje",
+        form_subtitle: "Completa el siguiente formulario y nuestro equipo te responderá a la brevedad.",
+        f_name: "Nombre Completo *",
+        f_email: "Correo Electrónico *",
+        f_subject: "Motivo de Consulta",
+        opt_coffee: "Compra de Café de Especialidad",
+        opt_liquor: "Licor Artesanal de Guayaba Fresa",
+        opt_coldbrew: "Cold Brew y Derivados",
+        opt_tour: "Visitas a la Finca y Cataciones",
+        opt_other: "Otra Consulta General",
+        f_message: "Mensaje o Pedido *",
+        f_btn_send: "Enviar Mensaje",
+        f_success_title: "¡Mensaje Enviado con Éxito!",
+        f_success_desc: "Gracias por comunicarte con Finca Los Robles. Nos pondremos en contacto contigo pronto.",
+        footer_bio: "Caficultura de alta precisión, respeto agroforestal y creaciones artesanales con identidad en San Cristóbal Alta Verapaz, Guatemala.",
+        footer_links_title: "Enlaces Rápidos",
+        footer_products_title: "Nuestros Pilares",
+        foot_item1: "Café de Altura Estrictamente Duro (SHB)",
+        foot_item2: "Licor Artesanal de Guayaba Fresa",
+        foot_item3: "Cold Brew y Maceraciones",
+        foot_item4: "Laboratorio & Catación Sensorial",
+        footer_location_title: "San Cristóbal Verapaz",
+        footer_rights: "Todos los derechos reservados. San Cristóbal Alta Verapaz, Guatemala.",
+        btn_back_top: "Volver arriba ↑"
+      },
+      en: {
+        nav_home: "Home",
+        nav_history: "History",
+        nav_services: "What We Do",
+        nav_gallery: "Gallery",
+        nav_contact: "Contact",
+        btn_header_contact: "Visit Us",
+        btn_whatsapp: "Direct WhatsApp",
+        hero_badge: "High-Altitude Coffee & Artisan Tradition",
+        hero_title: "Tradition and Passion in San Cristóbal Alta Verapaz",
+        hero_subtitle: "We cultivate shade-grown specialty coffee, craft artisanal delicacies, and deliver remarkable flavors from Guatemala's cloud forest mountains.",
+        hero_cta_history: "Discover Our Story",
+        hero_cta_contact: "Get in Touch",
+        stat_altitude: "Average Altitude",
+        stat_harvest: "Hand-Picked Harvest",
+        stat_process: "Shade-Grown Farming",
+        history_tag: "Our Heritage",
+        history_title: "The Legacy of Finca Los Robles",
+        history_subtitle: "Where Alta Verapaz mist embraces fertile soil to nurture coffee cherries of unmatched distinction.",
+        history_h3: "Deep Roots in San Cristóbal Alta Verapaz",
+        history_p1: "Nestled in the lush highlands of San Cristóbal Verapaz, Finca Los Robles was born from an enduring commitment to the land and regional biodiversity. Our mountain microclimate — renowned for its gentle constant drizzle known as “chipi-chipi” and mineral-rich volcanic soils — provides the optimal setting for a slow, sweet fruit maturation.",
+        history_p2: "We are more than a coffee farm; we are stewards of a family heritage blending ancestral agrarian wisdom with modern precision quality control. From caring for native oak canopies to selective cherry-by-cherry harvesting, every step honors the dignity of our people and ecological balance.",
+        pillar1_title: "Unique Microclimate",
+        pillar1_desc: "Temperate cloud forest climate concentrating natural sugars and aromatics.",
+        pillar2_title: "Artisanal Processing",
+        pillar2_desc: "Selective hand harvesting at peak ripeness and natural sun-drying.",
+        pillar3_title: "Agroforestry",
+        pillar3_desc: "Shade-grown beneath majestic oak trees preserving local wildlife.",
+        history_quote: '"Every cup tells the story of our mountains, the oak trees’ patience, and the devoted care behind every detail."',
+        origin_stamp: "Origin",
+        services_tag: "Our Craft in Action",
+        services_title: "What We Do at Finca Los Robles",
+        services_subtitle: "From single-origin specialty coffees to exclusive handcrafted fruit liquors and professional cupping laboratory experiences.",
+        card1_badge: "Specialty Grade",
+        card1_title: "Specialty Coffee",
+        card1_desc: "Strictly selected arabica varietals harvested at peak maturity. Fully washed and honey processes offering balanced sweetness, floral aromatics, caramel, and chocolate notes typical of Verapaz.",
+        card1_point1: "Custom roast profiles in whole bean or ground",
+        card1_point2: "Direct farm-to-cup traceability",
+        card2_badge: "Estate Innovation",
+        card2_title: "Handcrafted Spirits & Products",
+        card2_desc: "We craft our signature Strawberry Guava Liqueur, made from exotic fruit grown on our mountain slopes. We also bottle slow-extracted Cold Brew and floral coffee cascara teas.",
+        card2_point1: "100% natural Strawberry Guava Liqueur",
+        card2_point2: "Ready-to-drink Cold Brew & mixology bases",
+        card3_badge: "SCA Quality",
+        card3_title: "Lab & Sensory Experience",
+        card3_desc: "A dedicated cupping and roast analysis lab. We host guided coffee tastings, technical cupping workshops, and immersive walking tours through our plantations and nature trails.",
+        card3_point1: "Sensory cupping sessions & flavor mapping",
+        card3_point2: "Guided agronomic estate tours",
+        cta_banner_title: "Looking to taste our harvest or arrange a visit?",
+        cta_banner_desc: "Reach out to order roasted specialty coffee, reserve bottles of our artisanal liqueur, or book a private farm visit.",
+        cta_banner_btn: "Place an Order / Inquire",
+        gallery_tag: "Postcards from Our Land",
+        gallery_title: "Finca Los Robles Gallery",
+        gallery_subtitle: "A visual glance across our shade canopies, harvest, traditional sun patios, and pristine cloud forest scenery.",
+        filter_all: "All",
+        filter_farm: "Farm & Nature",
+        filter_process: "Harvest & Processing",
+        filter_products: "Coffee & Products",
+        g_cat_farm: "Estate",
+        g_cap_1: "Morning mist gently covering the oak trees and coffee plants",
+        g_cat_harvest: "Harvest",
+        g_cap_2: "Optimal ripeness in high-altitude coffee cherries",
+        g_cat_benefit: "Processing",
+        g_cap_3: "Solar patio drying under Guatemala's gentle sun",
+        g_cat_tasting: "Experience",
+        g_cap_4: "The balanced cup with delicate chocolate and floral notes",
+        g_cat_craft: "Artisan Craft",
+        g_cap_5: "Handcrafted Strawberry Guava Liqueur and infusions",
+        g_cat_nature: "Environment",
+        g_cap_6: "Pristine nature reserve in San Cristóbal Verapaz",
+        g_click_zoom: "Click to enlarge",
+        contact_tag: "Get in Touch",
+        contact_title: "Contact & Location",
+        contact_subtitle: "We are here for wholesale or retail orders, distribution inquiries, technical coffee questions, or scheduling your visit.",
+        c_info_title: "Finca Los Robles",
+        c_info_desc: "Strategically located in the mist-clad mountain ranges of San Cristóbal Alta Verapaz, Guatemala.",
+        c_loc_label: "Location:",
+        c_loc_val: "San Cristóbal Alta Verapaz, Guatemala, C.A.",
+        c_wa_label: "WhatsApp / Phone:",
+        c_email_label: "Email Address:",
+        c_hours_label: "Visiting Hours:",
+        c_hours_val: "Monday to Saturday: 8:00 AM – 5:00 PM (By appointment)",
+        c_wa_btn: "Chat via WhatsApp",
+        c_social_label: "Follow us:",
+        form_title: "Send Us a Message",
+        form_subtitle: "Fill out the form below and our team will get back to you promptly.",
+        f_name: "Full Name *",
+        f_email: "Email Address *",
+        f_subject: "Inquiry Reason",
+        opt_coffee: "Specialty Coffee Purchase",
+        opt_liquor: "Artisanal Strawberry Guava Liqueur",
+        opt_coldbrew: "Cold Brew & Derived Products",
+        opt_tour: "Farm Tours & Cupping Experience",
+        opt_other: "General Inquiries",
+        f_message: "Message or Order Details *",
+        f_btn_send: "Send Message",
+        f_success_title: "Message Successfully Sent!",
+        f_success_desc: "Thank you for reaching out to Finca Los Robles. We will contact you shortly.",
+        footer_bio: "High-precision coffee farming, agroforestry preservation, and distinctive artisanal craft in San Cristóbal Alta Verapaz, Guatemala.",
+        footer_links_title: "Quick Navigation",
+        footer_products_title: "Our Pillars",
+        foot_item1: "Strictly Hard Bean (SHB) High-Altitude Coffee",
+        foot_item2: "Artisanal Strawberry Guava Liqueur",
+        foot_item3: "Small-Batch Cold Brew",
+        foot_item4: "Sensory Analysis & Cupping Lab",
+        footer_location_title: "San Cristóbal Verapaz",
+        footer_rights: "All rights reserved. San Cristóbal Alta Verapaz, Guatemala.",
+        btn_back_top: "Back to top ↑"
+      }
+    };
+
+    let currentLang = 'es';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('finca_lang', lang);
+      document.documentElement.lang = lang;
+
+      const btnEs = document.getElementById('btn-lang-es');
+      const btnEn = document.getElementById('btn-lang-en');
+
+      if (lang === 'es') {
+        btnEs.className = "px-2.5 py-1 rounded-full transition-all duration-200 bg-robles-gold text-robles-forest font-bold shadow-sm";
+        btnEn.className = "px-2.5 py-1 rounded-full transition-all duration-200 text-white/80 hover:text-white";
+      } else {
+        btnEn.className = "px-2.5 py-1 rounded-full transition-all duration-200 bg-robles-gold text-robles-forest font-bold shadow-sm";
+        btnEs.className = "px-2.5 py-1 rounded-full transition-all duration-200 text-white/80 hover:text-white";
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      const nameInput = document.getElementById('form-name');
+      const msgInput = document.getElementById('form-message');
+      if (nameInput) {
+        nameInput.placeholder = lang === 'es' ? 'Ej. Carlos Mendoza' : 'E.g. John Doe';
+      }
+      if (msgInput) {
+        msgInput.placeholder = lang === 'es' ? '¿En qué podemos servirte hoy?...' : 'How can we help you today?...';
+      }
+    }
+
+    // Menú hamburguesa móvil
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('icon-mobile-menu');
+      const isHidden = menu.classList.contains('hidden');
+
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+
+    document.getElementById('btn-mobile-menu').addEventListener('click', toggleMobileMenu);
+
+    // Filtros de categoría para la galería
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.gallery-filter-btn');
+
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = "gallery-filter-btn active px-4 py-2 rounded-full bg-robles-forest text-white transition-all shadow-sm";
+        } else {
+          btn.className = "gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200";
+        }
+      });
+
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-cat');
+        if (category === 'all' || itemCat === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Visor Lightbox para la galería
+    function openLightbox(element) {
+      const img = element.querySelector('img');
+      const titleEl = element.querySelector('h4');
+      const modal = document.getElementById('lightbox-modal');
+      const modalImg = document.getElementById('lightbox-img');
+      const caption = document.getElementById('lightbox-caption');
+
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      caption.textContent = titleEl ? titleEl.textContent : img.alt;
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Envío interactivo del formulario con respuesta visual
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('form-submit-btn');
+      const btnText = document.getElementById('submit-btn-text');
+      const successBanner = document.getElementById('form-success');
+
+      const originalText = btnText.textContent;
+      btn.disabled = true;
+      btnText.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btnText.textContent = originalText;
+        successBanner.classList.remove('hidden');
+        document.getElementById('contact-form').reset();
+
+        setTimeout(() => {
+          successBanner.classList.add('hidden');
+        }, 6000);
+      }, 900);
+    }
+
+    // Carga inicial y persistencia de idioma
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('finca_lang') || 'es';
+      setLanguage(savedLang);
+    });
+  </script>
+
+</body>
+</html>
