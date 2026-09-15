@@ -9,10 +9,10 @@
   <meta property="og:description" content="Café de especialidad, licor artesanal y tradición cafetalera en el corazón de Alta Verapaz." />
   <meta property="og:type" content="website" />
 
-  <!-- Google Fonts: Playfair Display & Poppins -->
+  <!-- Google Fonts: Cinzel (Estilo Logo), Playfair Display & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome 6 Icons via CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -39,6 +39,7 @@
             }
           },
           fontFamily: {
+            brand: ['"Cinzel"', '"Playfair Display"', 'Georgia', 'serif'],
             serif: ['"Playfair Display"', 'Georgia', 'serif'],
             sans: ['"Poppins"', 'sans-serif'],
           }
@@ -178,13 +179,13 @@
   <section id="hero" class="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-      <!-- Unsplash photo: Misty coffee mountain plantation landscape -->
+      <!-- Foto real de portada: Finca Los Robles -->
       <img
         id="img-hero"
-        src="https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=2000&q=80"
+        src="/images/hero.jpg"
+        onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/hero.jpg';"
         alt="Entorno natural Finca Los Robles Alta Verapaz"
-        class="w-full h-full object-cover object-center transform scale-105 animate-pulse duration-1000"
-        style="animation-duration: 12s;"
+        class="w-full h-full object-cover object-center transform scale-105"
       />
       <div class="absolute inset-0 hero-gradient"></div>
     </div>
@@ -354,13 +355,14 @@
         <!-- Right Column: Visual Composition with Photo Switcher Support -->
         <div class="lg:col-span-5 relative">
           <div class="relative mx-auto max-w-md lg:max-w-none">
-            <!-- Primary Image: Coffee cherries / farm view -->
+            <!-- Primary Image: Don Augusto Robles / farm view -->
             <div class="overflow-hidden rounded-2xl shadow-2xl border-4 border-white relative group">
               <img
                 id="img-history-main"
-                src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
-                alt="Granos de café y tierras fértiles de Don Augusto Robles"
-                class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                src="/images/don-augusto.jpg"
+                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/don-augusto.jpg';"
+                alt="Don Augusto Robles, Fundador de Finca Los Robles"
+                class="w-full h-96 object-cover object-top hover:scale-105 transition-transform duration-500"
               />
               <button onclick="openPhotoManagerWithSlot('img-history-main')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md">
                 <i class="fa-solid fa-camera text-robles-gold"></i>
@@ -372,8 +374,9 @@
             <div class="hidden sm:block absolute -bottom-8 -left-8 w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
               <img
                 id="img-history-sub"
-                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
-                alt="Café tostado y tradición de Finca Los Robles"
+                src="/images/hero.jpg"
+                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/hero.jpg';"
+                alt="Cafetales de Finca Los Robles"
                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />
               <button onclick="openPhotoManagerWithSlot('img-history-sub')" class="absolute bottom-2 left-2 bg-black/60 hover:bg-black/80 text-white text-[11px] px-2 py-1 rounded-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shadow-md">
@@ -425,7 +428,8 @@
           <div class="h-56 overflow-hidden relative">
             <img
               id="img-service-1"
-              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+              src="/images/cafe-especialidad.jpg"
+              onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/cafe-especialidad.jpg';"
               alt="Café de Especialidad Finca Los Robles"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -465,7 +469,8 @@
           <div class="h-56 overflow-hidden relative">
             <img
               id="img-service-2"
-              src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80"
+              src="/images/licor-guayaba-fresa.jpg"
+              onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/licor-guayaba-fresa.jpg';"
               alt="Producción artesanal licor de guayaba fresa"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -505,7 +510,8 @@
           <div class="h-56 overflow-hidden relative">
             <img
               id="img-service-3"
-              src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=800&q=80"
+              src="/images/laboratorio-catacion.jpg"
+              onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/laboratorio-catacion.jpg';"
               alt="Laboratorio de catación y análisis de café"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -605,7 +611,8 @@
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="cafetal" onclick="openLightbox(this)">
           <img
             id="img-gallery-1"
-            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80"
+            src="/images/hero.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/hero.jpg';"
             alt="Cafetales bajo sombra y neblina en Finca Los Robles"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
@@ -624,8 +631,9 @@
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="proceso" onclick="openLightbox(this)">
           <img
             id="img-gallery-2"
-            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
-            alt="Cerezas de café maduras listas para corte"
+            src="/images/cafe-especialidad.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/cafe-especialidad.jpg';"
+            alt="Café de especialidad y cerezas maduras"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
           <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-2')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
@@ -662,8 +670,9 @@
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza" onclick="openLightbox(this)">
           <img
             id="img-gallery-4"
-            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
-            alt="Taza de café humeante en la finca"
+            src="/images/laboratorio-catacion.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/laboratorio-catacion.jpg';"
+            alt="Laboratorio de catación y análisis de café"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
           <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-4')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
@@ -672,7 +681,7 @@
           </button>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
             <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_tasting">Experiencia</span>
-            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_4">La taza perfecta con notas achocolatadas</h4>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_4">Laboratorio y mesa de catación</h4>
             <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
           </div>
         </div>
@@ -681,8 +690,9 @@
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza" onclick="openLightbox(this)">
           <img
             id="img-gallery-5"
-            src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80"
-            alt="Botella de licor artesanal y cold brew"
+            src="/images/licor-guayaba-fresa.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/licor-guayaba-fresa.jpg';"
+            alt="Botella de licor artesanal de guayaba fresa"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
           <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-5')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
@@ -700,17 +710,18 @@
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="cafetal" onclick="openLightbox(this)">
           <img
             id="img-gallery-6"
-            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80"
-            alt="Bosque nuboso y vegetación en Alta Verapaz"
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            src="/images/don-augusto.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/don-augusto.jpg';"
+            alt="Don Augusto Robles en la finca"
+            class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
           />
           <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-6')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
             <i class="fa-solid fa-camera text-robles-gold"></i>
             <span data-i18n="btn_change_photo">Cambiar</span>
           </button>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-            <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_nature">Entorno</span>
-            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_6">Santuario natural en San Cristóbal Verapaz</h4>
+            <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_nature">Don Augusto</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_6">Don Augusto Robles en su finca</h4>
             <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
           </div>
         </div>
@@ -802,7 +813,8 @@
         <!-- Post 1 -->
         <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="group relative block rounded-2xl overflow-hidden aspect-square bg-neutral-800 shadow-md">
           <img
-            src="https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=600&q=80"
+            src="/images/hero.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/hero.jpg';"
             alt="Niebla en Finca Los Robles Instagram"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
@@ -816,8 +828,9 @@
         <!-- Post 2 -->
         <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="group relative block rounded-2xl overflow-hidden aspect-square bg-neutral-800 shadow-md">
           <img
-            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
-            alt="Cosecha de cerezas rojas Instagram"
+            src="/images/cafe-especialidad.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/cafe-especialidad.jpg';"
+            alt="Café de especialidad Finca Los Robles Instagram"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
           <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
@@ -830,7 +843,8 @@
         <!-- Post 3 -->
         <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="group relative block rounded-2xl overflow-hidden aspect-square bg-neutral-800 shadow-md">
           <img
-            src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+            src="/images/licor-guayaba-fresa.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/licor-guayaba-fresa.jpg';"
             alt="Licor artesanal de guayaba fresa Instagram"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
@@ -844,7 +858,8 @@
         <!-- Post 4 -->
         <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="group relative block rounded-2xl overflow-hidden aspect-square bg-neutral-800 shadow-md">
           <img
-            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80"
+            src="/images/laboratorio-catacion.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/laboratorio-catacion.jpg';"
             alt="Catación de café especialidad Instagram"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
@@ -1802,18 +1817,18 @@
 
     // Default original images mapping for rollback
     const originalPhotos = {
-      'img-hero': 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1920&q=85',
-      'img-history-main': 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1000&q=80',
-      'img-history-sub': 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80',
-      'img-service-1': 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80',
-      'img-service-2': 'https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80',
-      'img-service-3': 'https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=800&q=80',
-      'img-gallery-1': 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80',
-      'img-gallery-2': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80',
+      'img-hero': '/images/hero.jpg',
+      'img-history-main': '/images/don-augusto.jpg',
+      'img-history-sub': '/images/hero.jpg',
+      'img-service-1': '/images/cafe-especialidad.jpg',
+      'img-service-2': '/images/licor-guayaba-fresa.jpg',
+      'img-service-3': '/images/laboratorio-catacion.jpg',
+      'img-gallery-1': '/images/hero.jpg',
+      'img-gallery-2': '/images/cafe-especialidad.jpg',
       'img-gallery-3': 'https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=80',
-      'img-gallery-4': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80',
-      'img-gallery-5': 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80',
-      'img-gallery-6': 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80'
+      'img-gallery-4': '/images/laboratorio-catacion.jpg',
+      'img-gallery-5': '/images/licor-guayaba-fresa.jpg',
+      'img-gallery-6': '/images/don-augusto.jpg'
     };
 
     function openPhotoManager() {
