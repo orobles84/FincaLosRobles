@@ -454,8 +454,8 @@
         </p>
       </div>
 
-      <!-- 3 Featured Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- 4 Featured Cards (Including Honey) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Card 1: Café de Especialidad -->
         <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-neutral-200/80 flex flex-col group shadow-sm">
@@ -518,6 +518,69 @@
             </ul>
           </div>
         </div>
+
+        <!-- Card 2: Miel Pura de Abeja Los Robles -->
+        <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-amber-200/90 flex flex-col group shadow-sm hover:border-amber-400">
+          <div class="h-56 overflow-hidden relative">
+            <img
+              id="img-service-honey"
+              src="/images/promocional-miel3.jpg"
+              onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/promocional-miel3.jpg';"
+              alt="Miel Pura de Abeja Finca Los Robles"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute top-3 left-3 bg-amber-600/95 text-white text-xs px-3 py-1 rounded-full font-medium tracking-wide shadow-sm flex items-center gap-1.5 border border-amber-300/40">
+              <i class="fa-solid fa-droplet text-amber-200"></i> <span data-i18n="card_honey_badge">100% Pura • Cosecha de Montaña</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center text-xl mb-4 -mt-10 relative z-10 shadow-md border-2 border-white">
+              <i class="fa-solid fa-jar"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-robles-forest mb-2" data-i18n="card_honey_title">
+              Miel Pura de Abeja
+            </h3>
+            <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed mb-3 flex-1" data-i18n="card_honey_desc">
+              Miel 100% cruda cosechada en los apiarios de nuestra finca. Las abejas polinizan las flores de cafetales bajo sombra y la vegetación nativa de San Cristóbal Alta Verapaz, produciendo una miel de aroma floral silvestre, textura densa y altísima pureza.
+            </p>
+
+            <!-- Honey Attributes Chips -->
+            <div class="mb-4 pt-3 border-t border-neutral-200/70">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[11px] font-bold text-robles-forest uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="fa-solid fa-certificate text-amber-600"></i>
+                  <span data-i18n="card_honey_attrs_title">Cualidades de Origen:</span>
+                </span>
+                <span class="text-[10px] font-medium text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">
+                  1 Bot. (750 ml)
+                </span>
+              </div>
+              <div class="flex flex-wrap gap-1.5 text-[11px]">
+                <span class="px-2 py-0.5 rounded-md bg-white border border-amber-300 text-amber-900 font-medium shadow-2xs" data-i18n="desc_raw_honey">100% Cruda</span>
+                <span class="px-2 py-0.5 rounded-md bg-white border border-amber-300 text-amber-900 font-medium shadow-2xs" data-i18n="desc_unfiltered">Sin Aditivos</span>
+                <span class="px-2 py-0.5 rounded-md bg-white border border-amber-300 text-amber-900 font-medium shadow-2xs" data-i18n="desc_coffee_blossom">Floración de Café</span>
+                <span class="px-2 py-0.5 rounded-md bg-amber-500/15 border border-amber-400 text-amber-900 font-semibold" data-i18n="desc_dispenser_cap">Tapa Dosificadora</span>
+              </div>
+            </div>
+
+            <ul class="text-xs text-neutral-600 space-y-2 pt-3 border-t border-neutral-200 mb-4">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-amber-600"></i>
+                <span data-i18n="card_honey_point1">Polinización agroforestal que fortalece los cafetales</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-amber-600"></i>
+                <span data-i18n="card_honey_point2">Envase ergonómico con tapón dosificador antigoteo</span>
+              </li>
+            </ul>
+
+            <a href="https://wa.me/50230086312?text=Hola%20Finca%20Los%20Robles,%20deseo%20hacer%20un%20pedido%20de%20Miel%20de%20Abeja" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs transition-all shadow-sm">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span data-i18n="card_honey_btn">Pedir Miel vía WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
 
         <!-- Card 2: Producción Artesanal (Licor de Guayaba, Cold Brew) -->
         <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-neutral-200/80 flex flex-col group shadow-sm">
@@ -595,11 +658,79 @@
 
       </div>
 
+      
+      <!-- Commercial Honey Showcase Section -->
+      <div class="mt-14 bg-gradient-to-br from-amber-50 via-robles-sand to-amber-100/60 rounded-3xl p-6 sm:p-10 border border-amber-200/90 shadow-lg relative overflow-hidden">
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-amber-200/40 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <!-- Image Collage -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-3">
+            <div class="rounded-2xl overflow-hidden shadow-md border-2 border-white aspect-4/5 group">
+              <img
+                src="/images/promocional-miel.jpg"
+                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/promocional-miel.jpg';"
+                alt="Miel Pura Finca Los Robles"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-md border-2 border-white aspect-4/5 group mt-4">
+              <img
+                src="/images/promocional-miel2.jpg"
+                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/promocional-miel2.jpg';"
+                alt="Apiario y Miel de Abeja"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          <!-- Honey Story & Specs -->
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-200/80 text-amber-900 font-semibold text-xs uppercase tracking-wider">
+              <i class="fa-solid fa-award text-amber-700"></i>
+              <span data-i18n="honey_showcase_badge">Cosecha Exclusiva • Apiarios Finca Los Robles</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-robles-forest" data-i18n="honey_showcase_title">
+              Miel de Abeja Pura de Bosque Nuboso
+            </h3>
+            <p class="text-sm sm:text-base text-neutral-700 leading-relaxed" data-i18n="honey_showcase_desc">
+              Nuestras abejas habitan en el corazón de la finca, alimentándose de la floración de cafetales y especies nativas de montaña a 1,600 msnm. El resultado es una miel virgen, rica en enzimas naturales, antioxidantes y un bouquet floral inconfundible. Disponible en práctica botella dosificadora de 750 ml para disfrutar en casa o distribuir.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 bg-white/90 backdrop-blur-xs rounded-xl border border-amber-200/70 shadow-2xs">
+                <div class="font-bold text-amber-900 text-xs uppercase tracking-wider mb-0.5" data-i18n="honey_feat1_title">100% Pura & Cruda</div>
+                <div class="text-[11px] text-neutral-600" data-i18n="honey_feat1_desc">Sin aditivos, conservantes ni mezclas de jarabes.</div>
+              </div>
+              <div class="p-3 bg-white/90 backdrop-blur-xs rounded-xl border border-amber-200/70 shadow-2xs">
+                <div class="font-bold text-amber-900 text-xs uppercase tracking-wider mb-0.5" data-i18n="honey_feat2_title">Simbiosis con el Café</div>
+                <div class="text-[11px] text-neutral-600" data-i18n="honey_feat2_desc">La polinización activa enriquece nuestros cafetales bajo sombra.</div>
+              </div>
+              <div class="p-3 bg-white/90 backdrop-blur-xs rounded-xl border border-amber-200/70 shadow-2xs">
+                <div class="font-bold text-amber-900 text-xs uppercase tracking-wider mb-0.5" data-i18n="honey_feat3_title">Envase Dosificador</div>
+                <div class="text-[11px] text-neutral-600" data-i18n="honey_feat3_desc">Botella de 750 ml con tapón antigoteo de uso fácil.</div>
+              </div>
+            </div>
+
+            <div class="pt-3 flex flex-wrap items-center gap-3">
+              <a href="https://wa.me/50230086312?text=Hola%20Finca%20Los%20Robles,%20deseo%20hacer%20un%20pedido%20de%20Miel%20de%20Abeja" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm transition-all shadow-md hover:shadow-lg">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span data-i18n="honey_cta_order">Ordenar Miel de Abeja (+502 3008-6312)</span>
+              </a>
+              <a href="#contacto" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white hover:bg-neutral-100 text-robles-forest border border-neutral-300 font-semibold text-sm transition-all shadow-2xs">
+                <i class="fa-solid fa-envelope text-xs text-robles-leaf"></i>
+                <span data-i18n="cta_banner_btn">Hacer Consulta Directa</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Banner bottom CTA -->
       <div class="mt-14 p-8 rounded-3xl bg-robles-forest text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div class="space-y-2 text-center md:text-left">
           <h4 class="font-serif text-2xl font-bold text-robles-gold" data-i18n="cta_banner_title">¿Deseas degustar nuestros productos o visitarnos?</h4>
-          <p class="text-sm text-white/80 max-w-xl" data-i18n="cta_banner_desc">Escríbenos para pedidos especiales de café tostado, botellas de licor artesanal o programar tu experiencia en la finca.</p>
+          <p class="text-sm text-white/80 max-w-xl" data-i18n="cta_banner_desc">Escríbenos para pedidos especiales de café tostado, miel pura de abeja, licor artesanal o programar tu experiencia en la finca.</p>
         </div>
         <a href="#contacto" class="px-6 py-3 rounded-full bg-robles-gold hover:bg-robles-goldDark text-robles-forest font-semibold text-sm tracking-wide transition-all shadow-md shrink-0">
           <span data-i18n="cta_banner_btn">Hacer un Pedido / Reserva</span>
@@ -645,6 +776,7 @@
         <button onclick="filterGallery('cafetal')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="cafetal" data-i18n="filter_farm">Cafetal & Naturaleza</button>
         <button onclick="filterGallery('proceso')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="proceso" data-i18n="filter_process">Cosecha & Proceso</button>
         <button onclick="filterGallery('taza')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="taza" data-i18n="filter_products">Café & Productos</button>
+        <button onclick="filterGallery('miel')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="miel" data-i18n="filter_honey">Miel Pura</button>
       </div>
 
       <!-- Photos Grid -->
@@ -744,6 +876,55 @@
             <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
           </div>
         </div>
+
+        <!-- Photo 7: Miel Los Robles con Panal -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza miel" onclick="openLightbox(this)">
+          <img
+            id="img-gallery-7"
+            src="/images/promocional-miel3.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/promocional-miel3.jpg';"
+            alt="Miel pura de abeja Los Robles con panal y flores"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-amber-400 font-medium uppercase tracking-wider" data-i18n="g_cat_honey">Miel Pura</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_7">Miel de abeja pura Los Robles con panal y floración de montaña</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
+        <!-- Photo 8: Promocional Miel -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza miel" onclick="openLightbox(this)">
+          <img
+            id="img-gallery-8"
+            src="/images/promocional-miel.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/promocional-miel.jpg';"
+            alt="Presentación comercial de Miel de Abeja Los Robles"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-amber-400 font-medium uppercase tracking-wider" data-i18n="g_cat_honey">Miel Pura</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_8">Presentación comercial de Miel de Abeja Los Robles</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
+        <!-- Photo 9: Promocional Miel 2 -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza miel" onclick="openLightbox(this)">
+          <img
+            id="img-gallery-9"
+            src="/images/promocional-miel2.jpg"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/orobles84/FincaLosRobles/main/public/images/promocional-miel2.jpg';"
+            alt="Apiarios y cosecha de miel en el bosque nuboso"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+            <span class="text-xs text-amber-400 font-medium uppercase tracking-wider" data-i18n="g_cat_honey">Miel Pura</span>
+            <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_9">Apiarios y cosecha de miel en el bosque nuboso</h4>
+            <p class="text-xs text-white/80 mt-1" data-i18n="g_click_zoom">Click para ampliar</p>
+          </div>
+        </div>
+
 
       </div>
 
@@ -944,7 +1125,17 @@
               </div>
               <div>
                 <strong class="block text-robles-forest" data-i18n="c_loc_label">Ubicación:</strong>
-                <span class="text-neutral-600" data-i18n="c_loc_val">San Cristóbal Alta Verapaz, Guatemala, C.A.</span>
+                <span class="text-neutral-600 block mb-2" data-i18n="c_loc_val">San Cristóbal Alta Verapaz, Guatemala, C.A.</span>
+                <a
+                  href="https://share.google/o2XE5uUO6s0Dtr7WS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-robles-sand hover:bg-robles-gold hover:text-robles-forest text-robles-coffee text-xs font-semibold transition-all shadow-2xs border border-robles-gold/30 group"
+                  title="Abrir ubicación en Google Maps"
+                >
+                  <i class="fa-solid fa-map-location-dot text-robles-goldDark group-hover:text-robles-forest"></i>
+                  <span data-i18n="c_loc_maps">Abrir en Google Maps ↗</span>
+                </a>
               </div>
             </div>
 
@@ -1066,6 +1257,7 @@
                 class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-robles-forest focus:ring-2 focus:ring-robles-forest/20 text-sm transition-all outline-none bg-white"
               >
                 <option value="cafe" data-i18n="opt_coffee">Compra de Café de Especialidad</option>
+                <option value="miel" data-i18n="opt_honey">Miel Pura de Abeja Los Robles</option>
                 <option value="licor" data-i18n="opt_liquor">Licor Artesanal de Guayaba</option>
                 <option value="coldbrew" data-i18n="opt_coldbrew">Cold Brew y Derivados</option>
                 <option value="catacion" data-i18n="opt_cupping">Catación y Perfiles Sensoriales</option>
@@ -1199,6 +1391,15 @@
             San Cristóbal Alta Verapaz, Guatemala.<br>
             Zona cafetalera de alta montaña.
           </p>
+          <a
+            href="https://share.google/o2XE5uUO6s0Dtr7WS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs text-robles-gold hover:text-white transition-colors mt-2"
+          >
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span data-i18n="footer_maps_link">Ver ruta en Google Maps ↗</span>
+          </a>
           <div class="space-y-1.5 text-xs text-white/80">
             <p class="flex items-center gap-2">
               <i class="fa-solid fa-phone text-robles-gold text-[10px]"></i>
@@ -1301,6 +1502,36 @@
         desc_silky_body: "Cuerpo Sedoso",
         card1_point1: "Perfil sensorial con notas dulces, frutales y achocolatadas",
         card1_point2: "Cosecha a 1,600 msnm • Trazabilidad 100%",
+        card_honey_badge: "100% Pura • Cosecha de Montaña",
+        card_honey_title: "Miel Pura de Abeja",
+        card_honey_desc: "Miel 100% cruda cosechada en los apiarios de nuestra finca. Las abejas polinizan las flores de cafetales bajo sombra y la vegetación nativa de San Cristóbal Alta Verapaz, produciendo una miel de aroma floral silvestre, textura densa y altísima pureza.",
+        card_honey_attrs_title: "Cualidades de Origen:",
+        desc_raw_honey: "100% Cruda",
+        desc_unfiltered: "Sin Aditivos",
+        desc_coffee_blossom: "Floración de Café",
+        desc_dispenser_cap: "Tapa Dosificadora",
+        card_honey_point1: "Polinización agroforestal que fortalece los cafetales",
+        card_honey_point2: "Envase ergonómico con tapón dosificador antigoteo",
+        card_honey_btn: "Pedir Miel vía WhatsApp",
+        honey_showcase_badge: "Cosecha Exclusiva • Apiarios Finca Los Robles",
+        honey_showcase_title: "Miel de Abeja Pura de Bosque Nuboso",
+        honey_showcase_desc: "Nuestras abejas habitan en el corazón de la finca, alimentándose de la floración de cafetales y especies nativas de montaña a 1,600 msnm. El resultado es una miel virgen, rica en enzimas naturales, antioxidantes y un bouquet floral inconfundible. Disponible en práctica botella dosificadora de 750 ml para disfrutar en casa o distribuir.",
+        honey_feat1_title: "100% Pura & Cruda",
+        honey_feat1_desc: "Sin aditivos, conservantes ni mezclas de jarabes.",
+        honey_feat2_title: "Simbiosis con el Café",
+        honey_feat2_desc: "La polinización activa enriquece nuestros cafetales bajo sombra.",
+        honey_feat3_title: "Envase Dosificador",
+        honey_feat3_desc: "Botella de 750 ml con tapón antigoteo de uso fácil.",
+        honey_cta_order: "Ordenar Miel de Abeja (+502 3008-6312)",
+        filter_honey: "Miel Pura",
+        g_cat_honey: "Miel Pura",
+        g_cap_7: "Miel de abeja pura Los Robles con panal y floración de montaña",
+        g_cap_8: "Presentación comercial de Miel de Abeja Los Robles",
+        g_cap_9: "Apiarios y cosecha de miel en el bosque nuboso",
+        opt_honey: "Miel Pura de Abeja Los Robles",
+        c_loc_maps: "Abrir en Google Maps ↗",
+        footer_maps_link: "Ver ruta en Google Maps ↗",
+        foot_item_honey: "Miel Pura de Abeja de Bosque Nuboso",
         card2_badge: "Innovación de Finca",
         card2_title: "Producción Artesanal & Derivados",
         card2_desc: "Elaboramos nuestro selecto Licor Artesanal de Guayaba, fruto cosechado en las laderas de nuestra finca y macerado pacientemente con receta tradicional. Además producimos Cold Brew concentrado de extracción lenta en frío, ideal para disfrutar directamente o en coctelería.",
@@ -1447,6 +1678,36 @@
         desc_silky_body: "Silky Body",
         card1_point1: "Sensory profile featuring sweet, fruity, and chocolate notes",
         card1_point2: "1,600 masl harvest • 100% single-lot traceability",
+        card_honey_badge: "100% Pure • Mountain Harvest",
+        card_honey_title: "Pure Raw Honey",
+        card_honey_desc: "100% pure raw honey harvested from our estate apiaries nestled among shade-grown coffee and native mountain flora in San Cristóbal Alta Verapaz. Producing a rich, unpasteurized honey with wild floral bouquet, dense golden texture, and supreme natural purity.",
+        card_honey_attrs_title: "Origin Qualities:",
+        desc_raw_honey: "100% Raw",
+        desc_unfiltered: "Additive-Free",
+        desc_coffee_blossom: "Coffee Blossom",
+        desc_dispenser_cap: "No-Drip Cap",
+        card_honey_point1: "Agroforestry pollination enriching our shade canopy",
+        card_honey_point2: "Ergonomic 750 ml bottle with mess-free dispensing cap",
+        card_honey_btn: "Order Honey via WhatsApp",
+        honey_showcase_badge: "Exclusive Harvest • Finca Los Robles Apiaries",
+        honey_showcase_title: "Pure Cloud Forest Raw Honey",
+        honey_showcase_desc: "Our bees thrive in the heart of the estate, foraging on coffee blossoms and native mountain flora at 1,600 masl. The result is virgin honey rich in natural active enzymes, antioxidants, and an unmistakable floral bouquet. Packaged in a convenient 750 ml dispenser bottle for home enjoyment or wholesale.",
+        honey_feat1_title: "100% Pure & Raw",
+        honey_feat1_desc: "No additives, preservatives, or artificial corn syrups.",
+        honey_feat2_title: "Coffee Blossom Symbiosis",
+        honey_feat2_desc: "Active pollination enriches the health and vitality of our shade-grown coffee.",
+        honey_feat3_title: "Dispenser Packaging",
+        honey_feat3_desc: "750 ml bottle with mess-free easy-pour precision cap.",
+        honey_cta_order: "Order Raw Honey (+502 3008-6312)",
+        filter_honey: "Pure Honey",
+        g_cat_honey: "Pure Honey",
+        g_cap_7: "Los Robles pure raw honey with honeycomb and mountain blossoms",
+        g_cap_8: "Commercial bottle presentation of Los Robles Honey",
+        g_cap_9: "Apiaries and honey harvest in the cloud forest canopy",
+        opt_honey: "Pure Raw Honey Los Robles",
+        c_loc_maps: "Open in Google Maps ↗",
+        footer_maps_link: "View route on Google Maps ↗",
+        foot_item_honey: "Pure Cloud Forest Raw Honey",
         card2_badge: "Estate Innovation",
         card2_title: "Handcrafted Spirits & Products",
         card2_desc: "We craft our select Handcrafted Guava Liqueur, made from fruit grown on our mountain slopes and patiently macerated following a traditional recipe. We also brew slow-extracted Cold Brew concentrate, perfect for direct drinking or craft mixology.",
@@ -1655,8 +1916,8 @@
       });
 
       items.forEach(item => {
-        const itemCat = item.getAttribute('data-cat');
-        if (category === 'all' || itemCat === category) {
+        const itemCat = (item.getAttribute('data-cat') || '').split(' ');
+        if (category === 'all' || itemCat.includes(category)) {
           item.style.display = 'block';
         } else {
           item.style.display = 'none';
