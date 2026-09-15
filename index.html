@@ -9,15 +9,15 @@
   <meta property="og:description" content="Café de especialidad, licor artesanal y tradición cafetalera en el corazón de Alta Verapaz." />
   <meta property="og:type" content="website" />
 
-  <!-- Google Fonts: Playfair Display (Títulos) & Poppins (Cuerpo) -->
+  <!-- Google Fonts: Playfair Display & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome 6 Icons vía CDN -->
+  <!-- Font Awesome 6 Icons via CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Tailwind CSS vía CDN con configuración personalizada de colores y fuentes -->
+  <!-- Tailwind CSS via CDN with custom configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -28,13 +28,13 @@
             robles: {
               forest: '#1a382b',     // Verde bosque profundo
               forestLight: '#244e3c',
-              leaf: '#2d6148',       // Verde hoja de cafetal
-              earth: '#3e2a1d',      // Tono tierra de montaña
+              leaf: '#2d6148',       // Verde hoja vibrante
+              earth: '#3e2a1d',      // Tono café tierra
               coffee: '#5c3e29',     // Café tostado
-              wood: '#8c6239',       // Madera de roble
+              wood: '#8c6239',       // Madera roble
               cream: '#faf7f2',      // Crema artesanal fondo
-              sand: '#f2eae0',       // Arena cálida
-              gold: '#cba358',       // Dorado suave artesanal
+              sand: '#f2eae0',       // Arena suave
+              gold: '#cba358',       // Dorado suave
               goldDark: '#b28b3f',   // Dorado acento
             }
           },
@@ -48,6 +48,7 @@
   </script>
 
   <style>
+    /* Estilos base refinados y detalles de interfaz */
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #faf7f2;
@@ -57,7 +58,7 @@
       font-family: 'Playfair Display', Georgia, serif;
     }
     .hero-gradient {
-      background: linear-gradient(180deg, rgba(26, 56, 43, 0.84) 0%, rgba(26, 56, 43, 0.72) 40%, rgba(30, 24, 20, 0.9) 100%);
+      background: linear-gradient(180deg, rgba(26, 56, 43, 0.82) 0%, rgba(26, 56, 43, 0.7) 40%, rgba(30, 24, 20, 0.88) 100%);
     }
     .card-hover {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -66,6 +67,7 @@
       transform: translateY(-6px);
       box-shadow: 0 20px 30px -10px rgba(26, 56, 43, 0.15);
     }
+    /* Estilización sutil del scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -90,7 +92,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logotipo / Nombre Finca -->
+        <!-- Brand / Logo -->
         <a href="#hero" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-robles-gold rounded-lg p-1">
           <div class="w-11 h-11 rounded-full bg-robles-forestLight border border-robles-gold/40 flex items-center justify-center text-robles-gold shadow-inner group-hover:scale-105 transition-transform">
             <i class="fa-solid fa-tree text-xl"></i>
@@ -105,7 +107,7 @@
           </div>
         </a>
 
-        <!-- Menú de Navegación de Escritorio -->
+        <!-- Desktop Navigation Menu -->
         <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium">
           <a href="#hero" class="nav-link px-3 py-2 text-white/90 hover:text-robles-gold transition-colors" data-i18n="nav_home">Inicio</a>
           <a href="#historia" class="nav-link px-3 py-2 text-white/90 hover:text-robles-gold transition-colors" data-i18n="nav_history">Historia</a>
@@ -114,8 +116,15 @@
           <a href="#contacto" class="nav-link px-3 py-2 text-white/90 hover:text-robles-gold transition-colors" data-i18n="nav_contact">Contacto</a>
         </nav>
 
-        <!-- Selector de Idioma [ ES | EN ] y CTA -->
-        <div class="flex items-center gap-3">
+        <!-- Right action: Language Selector & CTA -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Photo Manager Trigger Button -->
+          <button onclick="openPhotoManager()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-medium transition-all shadow-sm" title="Personalizar o cargar fotos de la finca">
+            <i class="fa-solid fa-camera text-robles-gold"></i>
+            <span class="hidden sm:inline" data-i18n="btn_custom_photos">Fotos</span>
+          </button>
+
+          <!-- Language Toggle Button [ ES | EN ] -->
           <div class="inline-flex items-center p-1 rounded-full bg-white/10 border border-white/15 text-xs font-semibold backdrop-blur-sm" role="group" aria-label="Selector de Idioma">
             <button id="btn-lang-es" onclick="setLanguage('es')" class="px-2.5 py-1 rounded-full transition-all duration-200 bg-robles-gold text-robles-forest font-bold shadow-sm">
               ES
@@ -125,13 +134,13 @@
             </button>
           </div>
 
-          <!-- Botón de Contacto Rápido -->
+          <!-- Contact Button (Desktop) -->
           <a href="#contacto" class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-robles-gold hover:bg-robles-goldDark text-robles-forest text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm">
             <i class="fa-regular fa-paper-plane text-xs"></i>
             <span data-i18n="btn_header_contact">Visítanos</span>
           </a>
 
-          <!-- Botón Menú Móvil -->
+          <!-- Mobile Menu Toggle Button -->
           <button id="btn-mobile-menu" type="button" class="md:hidden p-2.5 rounded-lg text-white/90 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-robles-gold" aria-expanded="false" aria-label="Abrir Menú">
             <i id="icon-mobile-menu" class="fa-solid fa-bars text-xl"></i>
           </button>
@@ -140,16 +149,21 @@
       </div>
     </div>
 
-    <!-- Menú Desplegable Móvil -->
+    <!-- Mobile Drawer / Menu Dropdown -->
     <div id="mobile-menu" class="hidden md:hidden bg-robles-forest border-b border-white/10 px-4 pt-2 pb-6 space-y-2 shadow-2xl transition-all">
       <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_home">Inicio</a>
       <a href="#historia" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_history">Historia</a>
       <a href="#servicios" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_services">Qué Hacemos</a>
       <a href="#galeria" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_gallery">Galería</a>
+      <a href="#instagram" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_instagram">Instagram @fincalosrobles.gt</a>
       <a href="#contacto" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-white/10 hover:text-robles-gold" data-i18n="nav_contact">Contacto</a>
       
       <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
-        <a href="https://wa.me/50200000000?text=Hola%20Finca%20Los%20Robles" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-medium text-sm transition-colors">
+        <button onclick="toggleMobileMenu(); openPhotoManager();" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-white/15 hover:bg-white/25 text-white font-medium text-sm transition-colors border border-white/20">
+          <i class="fa-solid fa-camera text-robles-gold"></i>
+          <span data-i18n="btn_custom_photos_mob">Cargar / Cambiar Fotos</span>
+        </button>
+        <a href="https://wa.me/50230086312?text=Hola%20Finca%20Los%20Robles" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-medium text-sm transition-colors">
           <i class="fa-brands fa-whatsapp text-lg"></i>
           <span data-i18n="btn_whatsapp">WhatsApp Directo</span>
         </a>
@@ -162,35 +176,38 @@
   <!-- 2. SECCIÓN HERO (Banner Principal)                       -->
   <!-- ========================================================= -->
   <section id="hero" class="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
-    <!-- Imagen de fondo (Reemplazable por foto del entorno real de Finca Los Robles) -->
+    <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
+      <!-- Unsplash photo: Misty coffee mountain plantation landscape -->
       <img
+        id="img-hero"
         src="https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=2000&q=80"
         alt="Entorno natural Finca Los Robles Alta Verapaz"
-        class="w-full h-full object-cover object-center transform scale-105"
+        class="w-full h-full object-cover object-center transform scale-105 animate-pulse duration-1000"
+        style="animation-duration: 12s;"
       />
       <div class="absolute inset-0 hero-gradient"></div>
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center">
       
-      <!-- Insignia Superior -->
+      <!-- Top Badge -->
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 border border-robles-gold/50 backdrop-blur-md text-robles-gold text-xs sm:text-sm font-medium mb-6 shadow-lg">
         <i class="fa-solid fa-mountain-sun"></i>
         <span data-i18n="hero_badge">Café de Altura & Tradición Artesanal</span>
       </div>
 
-      <!-- Título Principal -->
+      <!-- Main Headline -->
       <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white mb-6 max-w-4xl" data-i18n="hero_title">
         Tradición y Pasión en San Cristóbal Alta Verapaz
       </h1>
 
-      <!-- Subtítulo -->
+      <!-- Subtitle -->
       <p class="text-base sm:text-lg lg:text-xl text-robles-sand max-w-2xl font-light leading-relaxed mb-10 text-balance" data-i18n="hero_subtitle">
         Cultivamos café de especialidad bajo sombra, procesamos con esmero artesanal y creamos sabores únicos en la cuna del bosque nuboso guatemalteco.
       </p>
 
-      <!-- Botones de Acción (CTA) -->
+      <!-- Action Buttons (CTA) -->
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
         <a href="#historia" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-robles-gold hover:bg-robles-goldDark text-robles-forest font-semibold text-sm sm:text-base tracking-wide shadow-xl transition-all hover:scale-105">
           <i class="fa-solid fa-book-open"></i>
@@ -202,7 +219,7 @@
         </a>
       </div>
 
-      <!-- Métricas Destacadas del Hero -->
+      <!-- Key Quick Highlights Strip -->
       <div class="mt-16 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-12 text-center w-full max-w-3xl">
         <div class="flex flex-col">
           <span class="font-serif text-2xl sm:text-3xl font-bold text-robles-gold">1,450+ m</span>
@@ -220,7 +237,7 @@
 
     </div>
 
-    <!-- Indicador de Desplazamiento -->
+    <!-- Scroll Down Indicator -->
     <a href="#historia" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/60 hover:text-robles-gold transition-colors animate-bounce" aria-label="Ir a Historia">
       <i class="fa-solid fa-angles-down text-lg"></i>
     </a>
@@ -233,91 +250,142 @@
   <section id="historia" class="py-20 lg:py-28 bg-robles-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Encabezado de Sección -->
+      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 text-robles-leaf font-semibold text-xs uppercase tracking-widest mb-2">
           <i class="fa-solid fa-leaf"></i>
-          <span data-i18n="history_tag">Nuestra Herencia</span>
+          <span data-i18n="history_tag">Nuestra Herencia y Fundador</span>
         </div>
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-robles-forest tracking-tight" data-i18n="history_title">
-          El Legado de Finca Los Robles
+          El Legado de Don Augusto Robles
         </h2>
         <div class="w-16 h-1 bg-robles-gold mx-auto my-4 rounded-full"></div>
         <p class="text-neutral-600 text-base sm:text-lg leading-relaxed" data-i18n="history_subtitle">
-          Donde la niebla de Alta Verapaz abraza la tierra fértil para dar vida a frutos de calidad excepcional.
+          En 1985 comenzó una historia de valentía, aprendizaje junto a la comunidad y profundo amor a una tierra bendecida en San Cristóbal Alta Verapaz.
         </p>
       </div>
 
-      <!-- Diseño de 2 Columnas -->
+      <!-- 2-Column Layout: Text + Imagery Composition -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <!-- Columna Izquierda: Texto y Pilares -->
+        <!-- Left Column: Story & Highlights -->
         <div class="lg:col-span-7 space-y-6 text-neutral-700 leading-relaxed">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-robles-sand text-robles-coffee font-semibold text-xs uppercase tracking-wider">
+            <i class="fa-solid fa-calendar-check text-robles-goldDark"></i>
+            <span data-i18n="history_badge">Desde 1985 • San Cristóbal Alta Verapaz</span>
+          </div>
+
           <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-robles-earth" data-i18n="history_h3">
-            Raíces en el corazón de San Cristóbal Alta Verapaz
+            Una finca abandonada, una comunidad unida y pura tierra bendecida
           </h3>
-          <p class="text-base" data-i18n="history_p1">
-            Enclavada en las montañas verdes de San Cristóbal Verapaz, Finca Los Robles nace de una profunda vocación por la tierra y el respeto a la biodiversidad. El microclima privilegiado de la región —caracterizado por su místico “chipi-chipi” (llovizna suave constante) y suelos ricos en minerales volcánicos— brinda el entorno perfecto para la maduración lenta y dulce de nuestros frutos.
-          </p>
-          <p class="text-base" data-i18n="history_p2">
-            No somos solo una finca cafetalera; somos guardianes de un legado que combina saberes tradicionales transmitidos por generaciones con métodos contemporáneos de control de calidad. Desde la poda cuidadosa de robles nativos hasta la cosecha manual grano por grano, cada etapa de nuestra labor honra la dignidad de nuestra gente y el equilibrio del ecosistema.
+          
+          <p class="text-base text-neutral-700" data-i18n="history_p1">
+            En 1985, a <strong>Don Augusto Robles</strong> se le presentó la oportunidad de adquirir una finca abandonada en San Cristóbal Alta Verapaz. Sin tener conocimiento previo sobre agricultura pero impulsado por una profunda determinación, decidió emprender el reto.
           </p>
 
-          <!-- 3 Pilares Destacados -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-            <div class="p-4 rounded-xl bg-white border border-neutral-200/80 shadow-sm flex flex-col">
-              <div class="w-10 h-10 rounded-lg bg-robles-forest/10 text-robles-forest flex items-center justify-center mb-3 text-lg">
-                <i class="fa-solid fa-cloud-sun"></i>
+          <p class="text-base text-neutral-700" data-i18n="history_p2">
+            Al poco tiempo, con la ayuda incondicional de los lugareños, comenzó a cultivar frijol y maíz. Pero a medida que adquiría sabiduría sobre el campo y contemplaba la generosidad de los suelos, una revelación llenó su espíritu: comprendió que su finca era, en verdad, <em>pura tierra... bendecida</em>.
+          </p>
+
+          <p class="text-base text-neutral-700" data-i18n="history_p3">
+            San Cristóbal Alta Verapaz es reconocido por ser tierra cafetalera por excelencia. Con esa inspiración, a Don Augusto se le ocurrió cultivar café. Sin mayores conocimientos iniciales, se embarcó en esa gran aventura nuevamente con el apoyo fraterno de sus vecinos y la gente local. Con los años, su curiosidad creció hasta convertirse en una pasión insaciable y en un amor inmenso por sus cultivos. Llegó entonces el momento idóneo de nombrarla con el mayor orgullo: <strong>Finca Los Robles</strong>.
+          </p>
+
+          <!-- 4 Milestone Chronicle Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            
+            <div class="p-4 rounded-xl bg-white border border-neutral-200/90 shadow-sm flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-robles-forest/10 text-robles-forest flex items-center justify-center shrink-0 text-base">
+                <i class="fa-solid fa-flag"></i>
               </div>
-              <h4 class="font-bold text-robles-forest text-sm mb-1" data-i18n="pillar1_title">Microclima Único</h4>
-              <p class="text-xs text-neutral-600" data-i18n="pillar1_desc">Bosque nuboso con temperatura templada que intensifica azúcares naturales.</p>
+              <div>
+                <h4 class="font-bold text-robles-forest text-xs uppercase tracking-wider mb-0.5" data-i18n="m1_title">1985 • El Reto Inicial</h4>
+                <p class="text-xs text-neutral-600 leading-snug" data-i18n="m1_desc">Adquisición de la finca abandonada y el valor de empezar desde cero sin saber de agricultura.</p>
+              </div>
             </div>
 
-            <div class="p-4 rounded-xl bg-white border border-neutral-200/80 shadow-sm flex flex-col">
-              <div class="w-10 h-10 rounded-lg bg-robles-gold/20 text-robles-goldDark flex items-center justify-center mb-3 text-lg">
-                <i class="fa-solid fa-hand-holding-heart"></i>
+            <div class="p-4 rounded-xl bg-white border border-neutral-200/90 shadow-sm flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-robles-gold/20 text-robles-goldDark flex items-center justify-center shrink-0 text-base">
+                <i class="fa-solid fa-hands-holding-circle"></i>
               </div>
-              <h4 class="font-bold text-robles-forest text-sm mb-1" data-i18n="pillar2_title">Proceso Artesanal</h4>
-              <p class="text-xs text-neutral-600" data-i18n="pillar2_desc">Selección manual en cereza óptima y secado natural en patios.</p>
+              <div>
+                <h4 class="font-bold text-robles-forest text-xs uppercase tracking-wider mb-0.5" data-i18n="m2_title">Tierra Bendecida</h4>
+                <p class="text-xs text-neutral-600 leading-snug" data-i18n="m2_desc">Primeras cosechas de maíz y frijol junto a los lugareños, descubriendo la fertilidad del suelo.</p>
+              </div>
             </div>
 
-            <div class="p-4 rounded-xl bg-white border border-neutral-200/80 shadow-sm flex flex-col">
-              <div class="w-10 h-10 rounded-lg bg-robles-leaf/15 text-robles-leaf flex items-center justify-center mb-3 text-lg">
+            <div class="p-4 rounded-xl bg-white border border-neutral-200/90 shadow-sm flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-robles-leaf/15 text-robles-leaf flex items-center justify-center shrink-0 text-base">
                 <i class="fa-solid fa-seedling"></i>
               </div>
-              <h4 class="font-bold text-robles-forest text-sm mb-1" data-i18n="pillar3_title">Agroforestería</h4>
-              <p class="text-xs text-neutral-600" data-i18n="pillar3_desc">Cultivo bajo sombra de robles que protege flora y fauna nativa.</p>
+              <div>
+                <h4 class="font-bold text-robles-forest text-xs uppercase tracking-wider mb-0.5" data-i18n="m3_title">La Aventura Cafetera</h4>
+                <p class="text-xs text-neutral-600 leading-snug" data-i18n="m3_desc">Incursión en la caficultura guiado por vecinos locales, transformando curiosidad en maestría.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white border border-neutral-200/90 shadow-sm flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-robles-coffee/15 text-robles-coffee flex items-center justify-center shrink-0 text-base">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-robles-forest text-xs uppercase tracking-wider mb-0.5" data-i18n="m4_title">Finca Los Robles</h4>
+                <p class="text-xs text-neutral-600 leading-snug" data-i18n="m4_desc">Amor entrañable a las tierras y el bautizo de un nombre llevado con orgullo y gratitud.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quote Box with Don Augusto tribute -->
+          <div class="p-5 rounded-2xl bg-robles-sand/80 border-l-4 border-robles-gold text-robles-earth italic text-sm shadow-sm flex items-start gap-3.5">
+            <i class="fa-solid fa-quote-left text-2xl text-robles-gold shrink-0 mt-0.5"></i>
+            <div>
+              <p class="font-serif leading-relaxed" data-i18n="history_quote">
+                "Conforme aprendí de la agricultura y de nuestra gente, comprendí que esta era pura tierra... bendecida. Cada planta de café lleva el sudor, la fe y el orgullo de nuestra familia."
+              </p>
+              <span class="block not-italic text-xs font-bold text-robles-forest mt-2" data-i18n="history_author">
+                — Don Augusto Robles, Fundador de Finca Los Robles
+              </span>
             </div>
           </div>
 
-          <!-- Cita Destacada -->
-          <div class="p-5 rounded-2xl bg-robles-sand/70 border-l-4 border-robles-gold text-robles-earth italic text-sm">
-            <p data-i18n="history_quote">
-              "Cada taza cuenta la historia de nuestras montañas, la paciencia del roble y el esmero con el que cuidamos cada detalle."
-            </p>
-          </div>
         </div>
 
-        <!-- Columna Derecha: Composición Fotográfica -->
+        <!-- Right Column: Visual Composition with Photo Switcher Support -->
         <div class="lg:col-span-5 relative">
           <div class="relative mx-auto max-w-md lg:max-w-none">
-            <div class="overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
+            <!-- Primary Image: Coffee cherries / farm view -->
+            <div class="overflow-hidden rounded-2xl shadow-2xl border-4 border-white relative group">
               <img
+                id="img-history-main"
                 src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
-                alt="Granos de café maduros en Finca Los Robles"
+                alt="Granos de café y tierras fértiles de Don Augusto Robles"
                 class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
               />
+              <button onclick="openPhotoManagerWithSlot('img-history-main')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md">
+                <i class="fa-solid fa-camera text-robles-gold"></i>
+                <span data-i18n="btn_change_photo">Cambiar foto</span>
+              </button>
             </div>
-            <div class="hidden sm:block absolute -bottom-8 -left-8 w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+
+            <!-- Secondary Overlapping Image: Misty Mountain or Roast -->
+            <div class="hidden sm:block absolute -bottom-8 -left-8 w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
               <img
+                id="img-history-sub"
                 src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
-                alt="Café tostado artesanal"
+                alt="Café tostado y tradición de Finca Los Robles"
                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />
+              <button onclick="openPhotoManagerWithSlot('img-history-sub')" class="absolute bottom-2 left-2 bg-black/60 hover:bg-black/80 text-white text-[11px] px-2 py-1 rounded-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shadow-md">
+                <i class="fa-solid fa-camera text-robles-gold"></i>
+              </button>
             </div>
-            <div class="absolute -top-4 -right-4 bg-robles-forest text-white p-3 rounded-full shadow-lg border border-robles-gold/50 flex flex-col items-center justify-center w-20 h-20 text-center">
-              <span class="text-[10px] uppercase font-bold text-robles-gold" data-i18n="origin_stamp">Origen</span>
-              <span class="text-xs font-bold font-serif">100% GUA</span>
+
+            <!-- Decorative Badge: 1985 Fundada -->
+            <div class="absolute -top-4 -right-4 bg-robles-forest text-white p-3 rounded-full shadow-lg border border-robles-gold/50 flex flex-col items-center justify-center w-22 h-22 text-center">
+              <span class="text-[9px] uppercase font-bold text-robles-gold" data-i18n="history_stamp_year">Fundada</span>
+              <span class="text-sm font-bold font-serif text-white">1985</span>
+              <span class="text-[8px] text-white/80 uppercase">San Cristóbal</span>
             </div>
           </div>
         </div>
@@ -334,7 +402,7 @@
   <section id="servicios" class="py-20 lg:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Encabezado de Sección -->
+      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 text-robles-leaf font-semibold text-xs uppercase tracking-widest mb-2">
           <i class="fa-solid fa-mug-hot"></i>
@@ -349,17 +417,22 @@
         </p>
       </div>
 
-      <!-- Tarjetas de Productos y Servicios -->
+      <!-- 3 Featured Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Tarjeta 1: Café de Especialidad -->
+        <!-- Card 1: Café de Especialidad -->
         <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-neutral-200/80 flex flex-col group">
           <div class="h-56 overflow-hidden relative">
             <img
+              id="img-service-1"
               src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
               alt="Café de Especialidad Finca Los Robles"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
+            <button onclick="openPhotoManagerWithSlot('img-service-1')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md">
+              <i class="fa-solid fa-camera text-robles-gold"></i>
+              <span data-i18n="btn_change_photo">Cambiar</span>
+            </button>
             <div class="absolute top-3 left-3 bg-robles-forest/90 text-robles-gold text-xs px-3 py-1 rounded-full font-medium tracking-wide">
               <i class="fa-solid fa-award mr-1"></i> <span data-i18n="card1_badge">Especialidad</span>
             </div>
@@ -387,14 +460,19 @@
           </div>
         </div>
 
-        <!-- Tarjeta 2: Producción Artesanal (Licor de Guayaba Fresa, Cold Brew) -->
+        <!-- Card 2: Producción Artesanal (Licor de Guayaba Fresa, Cold Brew) -->
         <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-neutral-200/80 flex flex-col group">
           <div class="h-56 overflow-hidden relative">
             <img
+              id="img-service-2"
               src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80"
               alt="Producción artesanal licor de guayaba fresa"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
+            <button onclick="openPhotoManagerWithSlot('img-service-2')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md">
+              <i class="fa-solid fa-camera text-robles-gold"></i>
+              <span data-i18n="btn_change_photo">Cambiar</span>
+            </button>
             <div class="absolute top-3 left-3 bg-robles-goldDark/90 text-white text-xs px-3 py-1 rounded-full font-medium tracking-wide">
               <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> <span data-i18n="card2_badge">Innovación de Finca</span>
             </div>
@@ -422,14 +500,19 @@
           </div>
         </div>
 
-        <!-- Tarjeta 3: Experiencia & Laboratorio -->
+        <!-- Card 3: Experiencia & Laboratorio -->
         <div class="card-hover bg-robles-cream rounded-2xl overflow-hidden border border-neutral-200/80 flex flex-col group">
           <div class="h-56 overflow-hidden relative">
             <img
+              id="img-service-3"
               src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=800&q=80"
               alt="Laboratorio de catación y análisis de café"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
+            <button onclick="openPhotoManagerWithSlot('img-service-3')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md">
+              <i class="fa-solid fa-camera text-robles-gold"></i>
+              <span data-i18n="btn_change_photo">Cambiar</span>
+            </button>
             <div class="absolute top-3 left-3 bg-robles-forest/90 text-robles-gold text-xs px-3 py-1 rounded-full font-medium tracking-wide">
               <i class="fa-solid fa-microscope mr-1"></i> <span data-i18n="card3_badge">Calidad SCA</span>
             </div>
@@ -459,7 +542,7 @@
 
       </div>
 
-      <!-- Banner de Llamada a la Acción -->
+      <!-- Banner bottom CTA -->
       <div class="mt-14 p-8 rounded-3xl bg-robles-forest text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div class="space-y-2 text-center md:text-left">
           <h4 class="font-serif text-2xl font-bold text-robles-gold" data-i18n="cta_banner_title">¿Deseas degustar nuestros productos o visitarnos?</h4>
@@ -480,7 +563,7 @@
   <section id="galeria" class="py-20 lg:py-28 bg-robles-sand/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Encabezado de Sección -->
+      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-12">
         <div class="inline-flex items-center gap-2 text-robles-leaf font-semibold text-xs uppercase tracking-widest mb-2">
           <i class="fa-solid fa-camera"></i>
@@ -493,9 +576,21 @@
         <p class="text-neutral-600 text-base sm:text-lg" data-i18n="gallery_subtitle">
           Un vistazo visual a nuestros cafetales, cosecha, procesos de beneficio y la exuberante naturaleza de San Cristóbal Verapaz.
         </p>
+
+        <!-- Gallery Action Bar: Upload / Customizer trigger -->
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <button onclick="openPhotoManager()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-robles-forest hover:bg-robles-forestLight text-robles-gold text-xs font-semibold shadow-sm transition-all border border-robles-gold/30">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span data-i18n="btn_manage_gallery_photos">Personalizar Fotos con tus Imágenes</span>
+          </button>
+          <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-50 hover:bg-pink-100 text-pink-700 text-xs font-semibold shadow-sm transition-all border border-pink-200">
+            <i class="fa-brands fa-instagram text-sm text-pink-600"></i>
+            <span>Ver fotos en Instagram @fincalosrobles.gt</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Filtros de Categoría -->
+      <!-- Gallery Filters -->
       <div class="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs font-medium">
         <button onclick="filterGallery('all')" class="gallery-filter-btn active px-4 py-2 rounded-full bg-robles-forest text-white transition-all shadow-sm" data-category="all" data-i18n="filter_all">Todos</button>
         <button onclick="filterGallery('cafetal')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="cafetal" data-i18n="filter_farm">Cafetal & Naturaleza</button>
@@ -503,16 +598,21 @@
         <button onclick="filterGallery('taza')" class="gallery-filter-btn px-4 py-2 rounded-full bg-white text-neutral-700 hover:bg-robles-forest/10 transition-all border border-neutral-200" data-category="taza" data-i18n="filter_products">Café & Productos</button>
       </div>
 
-      <!-- Cuadrícula de Fotos -->
+      <!-- Photos Grid -->
       <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Foto 1 -->
+        <!-- Photo 1 -->
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="cafetal" onclick="openLightbox(this)">
           <img
+            id="img-gallery-1"
             src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80"
             alt="Cafetales bajo sombra y neblina en Finca Los Robles"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
+          <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-1')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
+            <i class="fa-solid fa-camera text-robles-gold"></i>
+            <span data-i18n="btn_change_photo">Cambiar</span>
+          </button>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
             <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_farm">Cafetal</span>
             <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_1">Niebla matutina sobre los robles y cafetales</h4>
@@ -520,13 +620,18 @@
           </div>
         </div>
 
-        <!-- Foto 2 -->
+        <!-- Photo 2 -->
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="proceso" onclick="openLightbox(this)">
           <img
+            id="img-gallery-2"
             src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
             alt="Cerezas de café maduras listas para corte"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
+          <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-2')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
+            <i class="fa-solid fa-camera text-robles-gold"></i>
+            <span data-i18n="btn_change_photo">Cambiar</span>
+          </button>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
             <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_harvest">Cosecha</span>
             <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_2">Maduración óptima en cereza de altura</h4>
@@ -534,13 +639,18 @@
           </div>
         </div>
 
-        <!-- Foto 3 -->
+        <!-- Photo 3 -->
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="proceso" onclick="openLightbox(this)">
           <img
+            id="img-gallery-3"
             src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=80"
             alt="Secado de café en pergamino al sol"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
+          <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-3')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
+            <i class="fa-solid fa-camera text-robles-gold"></i>
+            <span data-i18n="btn_change_photo">Cambiar</span>
+          </button>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
             <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_benefit">Beneficio</span>
             <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_3">Secado solar en patios tradicionales</h4>
@@ -548,13 +658,18 @@
           </div>
         </div>
 
-        <!-- Foto 4 -->
+        <!-- Photo 4 -->
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza" onclick="openLightbox(this)">
           <img
+            id="img-gallery-4"
             src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
             alt="Taza de café humeante en la finca"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
+          <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-4')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
+            <i class="fa-solid fa-camera text-robles-gold"></i>
+            <span data-i18n="btn_change_photo">Cambiar</span>
+          </button>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
             <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_tasting">Experiencia</span>
             <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_4">La taza perfecta con notas achocolatadas</h4>
@@ -562,13 +677,18 @@
           </div>
         </div>
 
-        <!-- Foto 5 -->
+        <!-- Photo 5 -->
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="taza" onclick="openLightbox(this)">
           <img
+            id="img-gallery-5"
             src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80"
             alt="Botella de licor artesanal y cold brew"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
+          <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-5')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
+            <i class="fa-solid fa-camera text-robles-gold"></i>
+            <span data-i18n="btn_change_photo">Cambiar</span>
+          </button>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
             <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_craft">Artesanal</span>
             <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_5">Licor de guayaba fresa y macerados</h4>
@@ -576,13 +696,18 @@
           </div>
         </div>
 
-        <!-- Foto 6 -->
+        <!-- Photo 6 -->
         <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md cursor-pointer bg-black/10 aspect-4/3" data-cat="cafetal" onclick="openLightbox(this)">
           <img
+            id="img-gallery-6"
             src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80"
             alt="Bosque nuboso y vegetación en Alta Verapaz"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
+          <button onclick="event.stopPropagation(); openPhotoManagerWithSlot('img-gallery-6')" class="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white text-xs px-2.5 py-1.5 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-20 shadow-md">
+            <i class="fa-solid fa-camera text-robles-gold"></i>
+            <span data-i18n="btn_change_photo">Cambiar</span>
+          </button>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
             <span class="text-xs text-robles-gold font-medium uppercase tracking-wider" data-i18n="g_cat_nature">Entorno</span>
             <h4 class="font-serif text-lg font-bold" data-i18n="g_cap_6">Santuario natural en San Cristóbal Verapaz</h4>
@@ -595,7 +720,7 @@
     </div>
   </section>
 
-  <!-- Modal Lightbox para Ampliar Fotos de la Galería -->
+  <!-- Modal Lightbox for Gallery Photos -->
   <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeLightbox(event)">
     <div class="relative max-w-4xl max-h-[90vh] w-full flex flex-col items-center" onclick="event.stopPropagation()">
       <button onclick="closeLightbox(event)" class="absolute -top-12 right-0 text-white/80 hover:text-white text-2xl p-2 focus:outline-none" aria-label="Cerrar Imagen">
@@ -608,12 +733,333 @@
 
 
   <!-- ========================================================= -->
+  <!-- 5. SECCIÓN INSTAGRAM FEED / COMUNIDAD                     -->
+  <!-- ========================================================= -->
+  <section id="instagram" class="py-16 bg-neutral-900 text-white relative overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#d4a359_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 text-robles-gold font-semibold text-xs uppercase tracking-widest mb-2">
+            <i class="fa-brands fa-instagram text-base"></i>
+            <span data-i18n="ig_tag">Comunidad & Vida en la Finca</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-white" data-i18n="ig_title">
+            Síguenos en Instagram @fincalosrobles.gt
+          </h2>
+          <p class="text-neutral-400 text-sm sm:text-base mt-2 max-w-2xl" data-i18n="ig_subtitle">
+            Acompáñanos en las mañanas de neblina, los cortes de café maduro, las pruebas sensoriales y las historias cotidianas de San Cristóbal Alta Verapaz.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5">
+          <a
+            href="https://www.instagram.com/fincalosrobles.gt/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:from-purple-500 hover:via-pink-500 hover:to-amber-400 text-white font-semibold text-xs uppercase tracking-wider transition-transform hover:scale-105 shadow-md"
+            title="Instagram @fincalosrobles.gt"
+          >
+            <i class="fa-brands fa-instagram text-base"></i>
+            <span>Instagram</span>
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@fincalosrobles.gt"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-black hover:bg-neutral-800 text-white font-semibold text-xs uppercase tracking-wider transition-transform hover:scale-105 shadow-md border border-white/20"
+            title="TikTok @fincalosrobles.gt"
+          >
+            <i class="fa-brands fa-tiktok text-base text-cyan-400"></i>
+            <span>TikTok</span>
+          </a>
+
+          <a
+            href="https://www.facebook.com/p/Caf%C3%A9-Finca-Los-Robles-61563765534999/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1877F2] hover:bg-[#166fe5] text-white font-semibold text-xs uppercase tracking-wider transition-transform hover:scale-105 shadow-md"
+            title="Facebook Café Finca Los Robles"
+          >
+            <i class="fa-brands fa-facebook-f text-base"></i>
+            <span>Facebook</span>
+          </a>
+
+          <button onclick="openPhotoManager()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold tracking-wider transition-all border border-white/20">
+            <i class="fa-solid fa-camera text-robles-gold"></i>
+            <span data-i18n="ig_btn_manage">Gestionar Fotos</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 Showcase Instagram-Style Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- Post 1 -->
+        <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="group relative block rounded-2xl overflow-hidden aspect-square bg-neutral-800 shadow-md">
+          <img
+            src="https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=600&q=80"
+            alt="Niebla en Finca Los Robles Instagram"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
+            <i class="fa-brands fa-instagram text-3xl text-robles-gold mb-2"></i>
+            <span class="text-xs font-semibold text-white">#SanCristobalVerapaz</span>
+            <span class="text-[11px] text-neutral-300 mt-1">Ver en Instagram ↗</span>
+          </div>
+        </a>
+
+        <!-- Post 2 -->
+        <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="group relative block rounded-2xl overflow-hidden aspect-square bg-neutral-800 shadow-md">
+          <img
+            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+            alt="Cosecha de cerezas rojas Instagram"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
+            <i class="fa-brands fa-instagram text-3xl text-robles-gold mb-2"></i>
+            <span class="text-xs font-semibold text-white">#CosechaManual</span>
+            <span class="text-[11px] text-neutral-300 mt-1">Ver en Instagram ↗</span>
+          </div>
+        </a>
+
+        <!-- Post 3 -->
+        <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="group relative block rounded-2xl overflow-hidden aspect-square bg-neutral-800 shadow-md">
+          <img
+            src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+            alt="Licor artesanal de guayaba fresa Instagram"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
+            <i class="fa-brands fa-instagram text-3xl text-robles-gold mb-2"></i>
+            <span class="text-xs font-semibold text-white">#LicorGuayabaFresa</span>
+            <span class="text-[11px] text-neutral-300 mt-1">Ver en Instagram ↗</span>
+          </div>
+        </a>
+
+        <!-- Post 4 -->
+        <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="group relative block rounded-2xl overflow-hidden aspect-square bg-neutral-800 shadow-md">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80"
+            alt="Catación de café especialidad Instagram"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
+            <i class="fa-brands fa-instagram text-3xl text-robles-gold mb-2"></i>
+            <span class="text-xs font-semibold text-white">#CafeDeEspecialidad</span>
+            <span class="text-[11px] text-neutral-300 mt-1">Ver en Instagram ↗</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Handle note -->
+      <div class="mt-8 text-center">
+        <p class="text-xs text-neutral-400">
+          Etiquétanos en tus fotos con <span class="text-robles-gold font-mono font-semibold">@fincalosrobles.gt</span> y usa el hashtag <span class="text-robles-gold font-mono font-semibold">#FincaLosRobles</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- MODAL / GESTOR DE FOTOGRAFÍAS DE FINCA LOS ROBLES        -->
+  <!-- ========================================================= -->
+  <div id="photo-manager-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 sm:p-6 transition-all" onclick="if(event.target === this) closePhotoManager()">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-hidden shadow-2xl flex flex-col border border-neutral-200">
+      
+      <!-- Modal Header -->
+      <div class="p-5 sm:p-6 bg-robles-forest text-white flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-robles-forestLight border border-robles-gold/40 flex items-center justify-center text-robles-gold">
+            <i class="fa-solid fa-camera text-lg"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-bold text-white" data-i18n="pm_title">Cargar Fotografías de Finca Los Robles</h3>
+            <p class="text-xs text-robles-gold/90" data-i18n="pm_subtitle">Personaliza las imágenes de la página con tus fotos reales o de Instagram</p>
+          </div>
+        </div>
+        <button onclick="closePhotoManager()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Tabs Navigation -->
+      <div class="flex border-b border-neutral-200 bg-neutral-50 px-6 pt-3 text-xs font-semibold">
+        <button id="tab-btn-upload" onclick="switchPhotoTab('upload')" class="px-4 py-2.5 border-b-2 border-robles-forest text-robles-forest font-bold transition-all">
+          <i class="fa-solid fa-upload mr-1.5 text-robles-leaf"></i>
+          <span data-i18n="pm_tab1">Cargar o Reemplazar Foto</span>
+        </button>
+        <button id="tab-btn-guide" onclick="switchPhotoTab('guide')" class="px-4 py-2.5 border-b-2 border-transparent text-neutral-500 hover:text-neutral-800 transition-all">
+          <i class="fa-solid fa-book-open mr-1.5 text-robles-goldDark"></i>
+          <span data-i18n="pm_tab2">Guía: Fotos de Redes & Permanentes</span>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-6 overflow-y-auto space-y-6 flex-1 text-neutral-800 text-sm">
+        
+        <!-- PANEL 1: Cargar / Reemplazar Foto -->
+        <div id="panel-photo-upload" class="space-y-5">
+          
+          <!-- Select Target Slot -->
+          <div>
+            <label class="block text-xs font-bold text-neutral-700 uppercase tracking-wider mb-2" data-i18n="pm_select_slot">
+              1. Selecciona qué foto de la web deseas cambiar:
+            </label>
+            <select id="pm-slot-select" class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 bg-white text-sm font-medium focus:ring-2 focus:ring-robles-leaf focus:border-transparent outline-none">
+              <option value="img-hero">Hero (Banner principal con neblina)</option>
+              <option value="img-history-main" selected>Historia (Foto principal - Don Augusto / Cosecha)</option>
+              <option value="img-history-sub">Historia (Foto pequeña flotante - Tostado)</option>
+              <option value="img-service-1">Servicio 1 (Café de Especialidad)</option>
+              <option value="img-service-2">Servicio 2 (Licor de Guayaba Fresa)</option>
+              <option value="img-service-3">Servicio 3 (Laboratorio de Catación)</option>
+              <option value="img-gallery-1">Galería 1 (Cafetal con Niebla)</option>
+              <option value="img-gallery-2">Galería 2 (Cerezas Maduras)</option>
+              <option value="img-gallery-3">Galería 3 (Secado en Patios)</option>
+              <option value="img-gallery-4">Galería 4 (Taza de Café)</option>
+              <option value="img-gallery-5">Galería 5 (Licor Artesanal)</option>
+              <option value="img-gallery-6">Galería 6 (Bosque Nuboso)</option>
+            </select>
+          </div>
+
+          <!-- Upload method 1: Local file upload -->
+          <div>
+            <label class="block text-xs font-bold text-neutral-700 uppercase tracking-wider mb-2" data-i18n="pm_upload_file">
+              2. Sube un archivo desde tu dispositivo (JPG, PNG, WEBP):
+            </label>
+            <div
+              id="drop-zone"
+              onclick="document.getElementById('pm-file-input').click()"
+              class="border-2 border-dashed border-neutral-300 hover:border-robles-leaf rounded-2xl p-6 text-center cursor-pointer bg-neutral-50 hover:bg-robles-cream/50 transition-colors flex flex-col items-center justify-center gap-2"
+            >
+              <i class="fa-solid fa-cloud-arrow-up text-3xl text-robles-leaf"></i>
+              <p class="font-medium text-xs text-neutral-700">
+                <span class="text-robles-forest underline font-bold">Haz clic aquí para seleccionar una foto</span> o arrástrala
+              </p>
+              <p class="text-[11px] text-neutral-400">Archivos optimizados automáticamente y guardados en tu navegador</p>
+              <input type="file" id="pm-file-input" accept="image/*" class="hidden" onchange="handleFileSelect(event)" />
+            </div>
+          </div>
+
+          <!-- Upload method 2: Image URL (Instagram, Cloudinary, etc.) -->
+          <div>
+            <label class="block text-xs font-bold text-neutral-700 uppercase tracking-wider mb-2" data-i18n="pm_paste_url">
+              O pega el enlace (URL) de cualquier imagen:
+            </label>
+            <div class="flex gap-2">
+              <input
+                type="url"
+                id="pm-url-input"
+                placeholder="https://ejemplo.com/tu-foto.jpg o enlace web..."
+                class="flex-1 px-4 py-2 rounded-xl border border-neutral-300 text-sm focus:ring-2 focus:ring-robles-leaf outline-none"
+              />
+              <button onclick="previewUrlImage()" class="px-4 py-2 bg-neutral-800 text-white rounded-xl text-xs font-medium hover:bg-black transition-colors">
+                Probar
+              </button>
+            </div>
+          </div>
+
+          <!-- Preview Frame -->
+          <div id="pm-preview-container" class="hidden p-4 bg-neutral-100 rounded-2xl flex items-center gap-4 border border-neutral-200">
+            <img id="pm-preview-img" src="" alt="Vista previa" class="w-20 h-20 object-cover rounded-xl border border-neutral-300 shadow-sm" />
+            <div class="flex-1">
+              <span class="text-xs font-bold text-robles-forest block">Imagen lista para aplicar</span>
+              <span id="pm-preview-info" class="text-[11px] text-neutral-500 block truncate max-w-xs"></span>
+            </div>
+            <button onclick="applyPhotoChange()" class="px-4 py-2 bg-robles-gold hover:bg-robles-goldDark text-robles-forest font-bold text-xs rounded-xl shadow-md transition-colors flex items-center gap-1.5">
+              <i class="fa-solid fa-check"></i>
+              <span data-i18n="btn_apply_photo">Aplicar a la Web</span>
+            </button>
+          </div>
+
+          <!-- Reset / Restore default button -->
+          <div class="pt-4 border-t border-neutral-200 flex items-center justify-between">
+            <button onclick="resetAllPhotos()" class="text-xs text-red-600 hover:text-red-800 font-semibold underline flex items-center gap-1.5">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span data-i18n="btn_reset_photos">Restablecer fotos originales</span>
+            </button>
+            <span class="text-[11px] text-neutral-400">Los cambios se guardan en tu navegador</span>
+          </div>
+
+        </div>
+
+        <!-- PANEL 2: Guía explicativa para Instagram & Fotos permanentes -->
+        <div id="panel-photo-guide" class="hidden space-y-4 leading-relaxed">
+          
+          <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex gap-3">
+            <i class="fa-solid fa-circle-info text-amber-600 text-lg shrink-0 mt-0.5"></i>
+            <div>
+              <strong class="font-bold block mb-1">¿Por qué no se pueden cargar las fotos de Instagram @fincalosrobles.gt de forma 100% automática?</strong>
+              <p>
+                Meta (propietaria de Instagram) bloquea el acceso directo a fotos de perfiles públicos por seguridad y requiere una <em>API de Desarrollador Oficial con Access Token</em> de Meta Graph. Además, las URLs de fotos de Instagram expiran automáticamente tras 48 a 72 horas si se enlazan externamente.
+              </p>
+            </div>
+          </div>
+
+          <h4 class="font-bold text-robles-forest text-sm pt-2">
+            3 Métodos Recomendados para Usar tus Fotos:
+          </h4>
+
+          <div class="space-y-3 text-xs">
+            <div class="p-3.5 rounded-xl bg-white border border-neutral-200 shadow-sm flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center font-bold shrink-0">1</span>
+              <div>
+                <strong class="text-robles-forest block font-bold">Opción Rápida (Desde este panel):</strong>
+                <p class="text-neutral-600 mt-0.5">
+                  Descarga tus fotos favoritas de tu cuenta <span class="font-semibold text-robles-forest">@fincalosrobles.gt</span> (o tómala con tu teléfono) y súbela en la pestaña <em>"Cargar o Reemplazar Foto"</em> de esta ventana. Se guardará de inmediato en tu navegador.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white border border-neutral-200 shadow-sm flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center font-bold shrink-0">2</span>
+              <div>
+                <strong class="text-robles-forest block font-bold">Opción Permanente con GitHub (Recomendado para publicación):</strong>
+                <p class="text-neutral-600 mt-0.5">
+                  Crea una carpeta llamada <code class="bg-neutral-100 px-1 py-0.5 rounded text-robles-coffee font-mono font-bold">public/images/</code> en tu repositorio de GitHub. Coloca allí tus archivos (ej: <code class="bg-neutral-100 px-1 py-0.5 rounded text-robles-coffee font-mono">hero.jpg</code>, <code class="bg-neutral-100 px-1 py-0.5 rounded text-robles-coffee font-mono">don-augusto.jpg</code>, <code class="bg-neutral-100 px-1 py-0.5 rounded text-robles-coffee font-mono">galeria-1.jpg</code>). Al hacer commit y push en GitHub, tus imágenes se cargan automáticamente desde <code class="bg-neutral-100 px-1 py-0.5 rounded text-robles-coffee font-mono">/images/nombre-foto.jpg</code>.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white border border-neutral-200 shadow-sm flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center font-bold shrink-0">3</span>
+              <div>
+                <strong class="text-robles-forest block font-bold">Alojamiento Gratuito en la Nube (Cloudinary o Imgur):</strong>
+                <p class="text-neutral-600 mt-0.5">
+                  Puedes subir las fotos de Don Augusto y la finca a servicios como Cloudinary, Imgur o Google Cloud Storage y pegar la URL permanente en esta herramienta.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 text-center">
+            <button onclick="switchPhotoTab('upload')" class="px-5 py-2.5 bg-robles-forest hover:bg-robles-forestLight text-robles-gold font-bold text-xs rounded-xl shadow-sm transition-colors">
+              Volver a Cargar Fotos
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
   <!-- 6. SECCIÓN DE CONTACTO Y UBICACIÓN                       -->
   <!-- ========================================================= -->
   <section id="contacto" class="py-20 lg:py-28 bg-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Encabezado de Sección -->
+      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 text-robles-leaf font-semibold text-xs uppercase tracking-widest mb-2">
           <i class="fa-solid fa-location-dot"></i>
@@ -630,7 +1076,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
-        <!-- Tarjeta de Información y Canales Directos -->
+        <!-- Left: Informative Card & Details -->
         <div class="lg:col-span-5 space-y-8 bg-robles-cream p-8 sm:p-10 rounded-3xl border border-neutral-200/80 shadow-sm">
           
           <div>
@@ -642,10 +1088,11 @@
             </p>
           </div>
 
-          <!-- Lista de Contacto -->
+          <!-- Contact items list -->
           <div class="space-y-5 text-sm">
+            
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0">
+              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0 shadow-sm">
                 <i class="fa-solid fa-map-pin"></i>
               </div>
               <div>
@@ -655,65 +1102,72 @@
             </div>
 
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0">
+              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0 shadow-sm">
                 <i class="fa-brands fa-whatsapp text-lg"></i>
               </div>
               <div>
                 <strong class="block text-robles-forest" data-i18n="c_wa_label">WhatsApp / Teléfono:</strong>
-                <a href="https://wa.me/50200000000" target="_blank" rel="noopener noreferrer" class="text-robles-leaf hover:underline font-medium">
-                  +502 0000-0000 / Consultas Directas
+                <a href="https://wa.me/50230086312" target="_blank" rel="noopener noreferrer" class="text-robles-leaf hover:underline font-semibold text-base">
+                  +502 3008-6312
                 </a>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0">
+              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0 shadow-sm">
                 <i class="fa-solid fa-envelope"></i>
               </div>
               <div>
                 <strong class="block text-robles-forest" data-i18n="c_email_label">Correo Electrónico:</strong>
-                <a href="mailto:info@fincalosrobles.gt" class="text-robles-leaf hover:underline">
-                  info@fincalosrobles.gt
+                <a href="mailto:fincalosrobles.gt@gmail.com" class="text-robles-leaf hover:underline font-medium break-all">
+                  fincalosrobles.gt@gmail.com
                 </a>
               </div>
             </div>
 
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-robles-forest text-robles-gold flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-clock"></i>
-              </div>
-              <div>
-                <strong class="block text-robles-forest" data-i18n="c_hours_label">Atención y Visitas:</strong>
-                <span class="text-neutral-600" data-i18n="c_hours_val">Lunes a Sábado: 8:00 AM – 5:00 PM (Previa Cita)</span>
-              </div>
-            </div>
           </div>
 
-          <!-- Botón de WhatsApp -->
+          <!-- Direct WhatsApp Quick Action Button -->
           <div class="pt-4 border-t border-neutral-200">
-            <a href="https://wa.me/50200000000?text=Hola%20Finca%20Los%20Robles,%20deseo%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all shadow-md hover:shadow-lg">
+            <a href="https://wa.me/50230086312?text=Hola%20Finca%20Los%20Robles,%20deseo%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all shadow-md hover:shadow-lg">
               <i class="fa-brands fa-whatsapp text-xl"></i>
               <span data-i18n="c_wa_btn">Contactar vía WhatsApp</span>
             </a>
           </div>
 
-          <!-- Redes Sociales -->
-          <div class="flex items-center gap-3 pt-2">
-            <span class="text-xs text-neutral-500 font-medium mr-2" data-i18n="c_social_label">Síguenos:</span>
-            <a href="#" class="w-9 h-9 rounded-full bg-white border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-robles-forest hover:border-robles-gold transition-colors" aria-label="Facebook">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="#" class="w-9 h-9 rounded-full bg-white border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-robles-forest hover:border-robles-gold transition-colors" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="#" class="w-9 h-9 rounded-full bg-white border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-robles-forest hover:border-robles-gold transition-colors" aria-label="YouTube">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
+          <!-- Social Media Icons -->
+          <div class="pt-2">
+            <div class="text-xs text-neutral-500 font-semibold uppercase tracking-wider mb-3" data-i18n="c_social_label">Nuestras Redes Sociales:</div>
+            <div class="flex flex-wrap items-center gap-3">
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/p/Caf%C3%A9-Finca-Los-Robles-61563765534999/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-neutral-200 text-neutral-700 hover:text-[#1877F2] hover:border-[#1877F2] hover:shadow-sm text-xs font-semibold transition-all" aria-label="Facebook Café Finca Los Robles" title="Café Finca Los Robles">
+                <i class="fa-brands fa-facebook-f text-sm text-[#1877F2]"></i>
+                <span>Facebook</span>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-neutral-200 text-neutral-700 hover:text-pink-600 hover:border-pink-500 hover:shadow-sm text-xs font-semibold transition-all" aria-label="Instagram @fincalosrobles.gt" title="@fincalosrobles.gt">
+                <i class="fa-brands fa-instagram text-sm text-pink-600"></i>
+                <span>@fincalosrobles.gt</span>
+              </a>
+
+              <!-- TikTok -->
+              <a href="https://www.tiktok.com/@fincalosrobles.gt" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-neutral-200 text-neutral-700 hover:text-black hover:border-black hover:shadow-sm text-xs font-semibold transition-all" aria-label="TikTok @fincalosrobles.gt" title="@fincalosrobles.gt">
+                <i class="fa-brands fa-tiktok text-sm text-black"></i>
+                <span>TikTok</span>
+              </a>
+
+              <!-- WhatsApp Direct -->
+              <a href="https://wa.me/50230086312" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-neutral-200 text-neutral-700 hover:text-emerald-600 hover:border-emerald-500 hover:shadow-sm text-xs font-semibold transition-all" aria-label="WhatsApp +502 3008-6312" title="+502 3008-6312">
+                <i class="fa-brands fa-whatsapp text-sm text-emerald-600"></i>
+                <span>WhatsApp</span>
+              </a>
+            </div>
           </div>
 
         </div>
 
-        <!-- Formulario de Contacto -->
+        <!-- Right: Contact Form -->
         <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-neutral-200/80 shadow-lg">
           <h3 class="font-serif text-2xl font-bold text-robles-forest mb-2" data-i18n="form_title">
             Envíanos un Mensaje
@@ -722,8 +1176,11 @@
             Completa el siguiente formulario y nuestro equipo te responderá a la brevedad.
           </p>
 
+          <!-- Form Element -->
           <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Name Input -->
               <div>
                 <label for="form-name" class="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5" data-i18n="f_name">
                   Nombre Completo *
@@ -737,6 +1194,7 @@
                 />
               </div>
 
+              <!-- Email Input -->
               <div>
                 <label for="form-email" class="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5" data-i18n="f_email">
                   Correo Electrónico *
@@ -751,6 +1209,7 @@
               </div>
             </div>
 
+            <!-- Subject / Interest -->
             <div>
               <label for="form-subject" class="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5" data-i18n="f_subject">
                 Motivo de Consulta
@@ -767,6 +1226,7 @@
               </select>
             </div>
 
+            <!-- Message Textarea -->
             <div>
               <label for="form-message" class="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5" data-i18n="f_message">
                 Mensaje o Pedido *
@@ -780,6 +1240,7 @@
               ></textarea>
             </div>
 
+            <!-- Submit Button -->
             <button
               type="submit"
               id="form-submit-btn"
@@ -789,7 +1250,7 @@
               <span id="submit-btn-text" data-i18n="f_btn_send">Enviar Mensaje</span>
             </button>
 
-            <!-- Banner de Confirmación de Envío -->
+            <!-- Success Notification Banner (Hidden by default) -->
             <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-sm flex items-center gap-3">
               <i class="fa-solid fa-circle-check text-emerald-600 text-xl shrink-0"></i>
               <div>
@@ -797,6 +1258,7 @@
                 <span data-i18n="f_success_desc">Gracias por comunicarte con Finca Los Robles. Nos pondremos en contacto contigo pronto.</span>
               </div>
             </div>
+
           </form>
         </div>
 
@@ -814,6 +1276,7 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         
+        <!-- Col 1: Brand & Bio -->
         <div class="space-y-4">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-robles-gold border border-robles-gold/30">
@@ -826,8 +1289,29 @@
           <p class="text-sm text-white/70 leading-relaxed" data-i18n="footer_bio">
             Caficultura de alta precisión, respeto agroforestal y creaciones artesanales con identidad en San Cristóbal Alta Verapaz, Guatemala.
           </p>
+          <!-- Social Icons Footer -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://www.facebook.com/p/Caf%C3%A9-Finca-Los-Robles-61563765534999/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#1877F2] text-white flex items-center justify-center transition-colors" title="Facebook Café Finca Los Robles">
+              <i class="fa-brands fa-facebook-f text-xs"></i>
+            </a>
+            <a href="https://www.instagram.com/fincalosrobles.gt/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 hover:bg-pink-600 text-white flex items-center justify-center transition-colors" title="Instagram @fincalosrobles.gt">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="https://www.tiktok.com/@fincalosrobles.gt" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 hover:bg-black text-white flex items-center justify-center transition-colors border border-transparent hover:border-white/20" title="TikTok @fincalosrobles.gt">
+              <i class="fa-brands fa-tiktok text-xs"></i>
+            </a>
+            <a href="https://wa.me/50230086312" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 text-white flex items-center justify-center transition-colors" title="WhatsApp +502 3008-6312">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+            </a>
+            <span class="text-white/20">•</span>
+            <button onclick="openPhotoManager()" class="text-xs text-robles-gold hover:text-white transition-colors flex items-center gap-1.5 underline underline-offset-4">
+              <i class="fa-solid fa-camera"></i>
+              <span data-i18n="ig_btn_manage">Gestionar Fotos</span>
+            </button>
+          </div>
         </div>
 
+        <!-- Col 2: Quick Links -->
         <div>
           <h4 class="font-serif text-base font-bold text-white uppercase tracking-wider mb-4" data-i18n="footer_links_title">
             Enlaces Rápidos
@@ -841,6 +1325,7 @@
           </ul>
         </div>
 
+        <!-- Col 3: Specialties -->
         <div>
           <h4 class="font-serif text-base font-bold text-white uppercase tracking-wider mb-4" data-i18n="footer_products_title">
             Nuestros Pilares
@@ -865,22 +1350,36 @@
           </ul>
         </div>
 
-        <div class="space-y-4">
+        <!-- Col 4: Location & Direct Contact -->
+        <div class="space-y-3">
           <h4 class="font-serif text-base font-bold text-white uppercase tracking-wider mb-2" data-i18n="footer_location_title">
-            San Cristóbal Verapaz
+            Contacto Directo
           </h4>
-          <p class="text-sm text-white/70">
-            Alta Verapaz, Guatemala.<br>
-            Zona de bosque nuboso y rica tradición cafetera.
+          <p class="text-xs text-white/70 leading-relaxed">
+            San Cristóbal Alta Verapaz, Guatemala.<br>
+            Zona cafetalera de alta montaña.
           </p>
-          <a href="https://wa.me/50200000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold tracking-wider transition-colors">
-            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
-            <span>Chat WhatsApp</span>
-          </a>
+          <div class="space-y-1.5 text-xs text-white/80">
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-robles-gold text-[10px]"></i>
+              <a href="tel:+50230086312" class="hover:text-robles-gold transition-colors">+502 3008-6312</a>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-robles-gold text-[10px]"></i>
+              <a href="mailto:fincalosrobles.gt@gmail.com" class="hover:text-robles-gold transition-colors">fincalosrobles.gt@gmail.com</a>
+            </p>
+          </div>
+          <div class="pt-2">
+            <a href="https://wa.me/50230086312?text=Hola%20Finca%20Los%20Robles" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold tracking-wider transition-colors shadow-md">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+              <span>WhatsApp +502 3008-6312</span>
+            </a>
+          </div>
         </div>
 
       </div>
 
+      <!-- Bottom Bar -->
       <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
         <p>© <span id="current-year"></span> Finca Los Robles. <span data-i18n="footer_rights">Todos los derechos reservados. San Cristóbal Alta Verapaz, Guatemala.</span></p>
         <div class="flex items-center gap-6">
@@ -892,12 +1391,15 @@
   </footer>
 
   <!-- ========================================================= -->
-  <!-- JAVASCRIPT: MOTOR BILINGÜE, LIGHTBOX & FORMULARIO         -->
+  <!-- JAVASCRIPT: BILINGUAL ENGINE, GALLERY LIGHTBOX & FORMS    -->
   <!-- ========================================================= -->
   <script>
+    // Set dynamic current year
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Diccionario Bilingüe Completo (Español / English)
+    // ---------------------------------------------------------
+    // DICCIONARIO BILINGÜE COMPLETO (Español / English)
+    // ---------------------------------------------------------
     const translations = {
       es: {
         nav_home: "Inicio",
@@ -982,7 +1484,7 @@
         c_hours_label: "Atención y Visitas:",
         c_hours_val: "Lunes a Sábado: 8:00 AM – 5:00 PM (Previa Cita)",
         c_wa_btn: "Contactar vía WhatsApp",
-        c_social_label: "Síguenos:",
+        c_social_label: "Nuestras Redes Sociales:",
         form_title: "Envíanos un Mensaje",
         form_subtitle: "Completa el siguiente formulario y nuestro equipo te responderá a la brevedad.",
         f_name: "Nombre Completo *",
@@ -1006,7 +1508,23 @@
         foot_item4: "Laboratorio & Catación Sensorial",
         footer_location_title: "San Cristóbal Verapaz",
         footer_rights: "Todos los derechos reservados. San Cristóbal Alta Verapaz, Guatemala.",
-        btn_back_top: "Volver arriba ↑"
+        btn_back_top: "Volver arriba ↑",
+        btn_change_photo: "Cambiar",
+        btn_manage_gallery_photos: "Personalizar Fotos con tus Imágenes",
+        ig_tag: "Comunidad & Vida en la Finca",
+        ig_title: "Síguenos en Instagram @fincalosrobles.gt",
+        ig_subtitle: "Acompáñanos en las mañanas de neblina, los cortes de café maduro, las pruebas sensoriales y las historias cotidianas de San Cristóbal Alta Verapaz.",
+        ig_btn_follow: "Seguir en Instagram",
+        ig_btn_manage: "Gestionar Fotos",
+        pm_title: "Cargar Fotografías de Finca Los Robles",
+        pm_subtitle: "Personaliza las imágenes de la página con tus fotos reales o de Instagram",
+        pm_tab1: "Cargar o Reemplazar Foto",
+        pm_tab2: "Guía: Fotos de Redes & Permanentes",
+        pm_select_slot: "1. Selecciona qué foto de la web deseas cambiar:",
+        pm_upload_file: "2. Sube un archivo desde tu dispositivo (JPG, PNG, WEBP):",
+        pm_paste_url: "O pega el enlace (URL) de cualquier imagen:",
+        btn_apply_photo: "Aplicar a la Web",
+        btn_reset_photos: "Restablecer fotos originales"
       },
       en: {
         nav_home: "Home",
@@ -1091,7 +1609,7 @@
         c_hours_label: "Visiting Hours:",
         c_hours_val: "Monday to Saturday: 8:00 AM – 5:00 PM (By appointment)",
         c_wa_btn: "Chat via WhatsApp",
-        c_social_label: "Follow us:",
+        c_social_label: "Our Social Media:",
         form_title: "Send Us a Message",
         form_subtitle: "Fill out the form below and our team will get back to you promptly.",
         f_name: "Full Name *",
@@ -1115,7 +1633,23 @@
         foot_item4: "Sensory Analysis & Cupping Lab",
         footer_location_title: "San Cristóbal Verapaz",
         footer_rights: "All rights reserved. San Cristóbal Alta Verapaz, Guatemala.",
-        btn_back_top: "Back to top ↑"
+        btn_back_top: "Back to top ↑",
+        btn_change_photo: "Change",
+        btn_manage_gallery_photos: "Customize Photos with Your Images",
+        ig_tag: "Community & Life on the Farm",
+        ig_title: "Follow Us on Instagram @fincalosrobles.gt",
+        ig_subtitle: "Join us through the morning mist, ripe coffee harvesting, sensory tastings, and everyday stories in San Cristóbal Alta Verapaz.",
+        ig_btn_follow: "Follow on Instagram",
+        ig_btn_manage: "Manage Photos",
+        pm_title: "Upload Photos for Finca Los Robles",
+        pm_subtitle: "Customize website images with your real photos or from Instagram",
+        pm_tab1: "Upload or Replace Photo",
+        pm_tab2: "Guide: Social Media & Permanent Photos",
+        pm_select_slot: "1. Select which website photo to change:",
+        pm_upload_file: "2. Upload a file from your device (JPG, PNG, WEBP):",
+        pm_paste_url: "Or paste the URL of any image:",
+        btn_apply_photo: "Apply to Website",
+        btn_reset_photos: "Reset to original photos"
       }
     };
 
@@ -1126,6 +1660,7 @@
       localStorage.setItem('finca_lang', lang);
       document.documentElement.lang = lang;
 
+      // Update Active Button Styling in Header
       const btnEs = document.getElementById('btn-lang-es');
       const btnEn = document.getElementById('btn-lang-en');
 
@@ -1137,6 +1672,7 @@
         btnEs.className = "px-2.5 py-1 rounded-full transition-all duration-200 text-white/80 hover:text-white";
       }
 
+      // Translate all DOM elements with [data-i18n]
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -1144,6 +1680,7 @@
         }
       });
 
+      // Update placeholders
       const nameInput = document.getElementById('form-name');
       const msgInput = document.getElementById('form-message');
       if (nameInput) {
@@ -1154,7 +1691,9 @@
       }
     }
 
-    // Menú hamburguesa móvil
+    // ---------------------------------------------------------
+    // MOBILE DRAWER MENU
+    // ---------------------------------------------------------
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const icon = document.getElementById('icon-mobile-menu');
@@ -1173,7 +1712,9 @@
 
     document.getElementById('btn-mobile-menu').addEventListener('click', toggleMobileMenu);
 
-    // Filtros de categoría para la galería
+    // ---------------------------------------------------------
+    // GALLERY CATEGORY FILTER
+    // ---------------------------------------------------------
     function filterGallery(category) {
       const items = document.querySelectorAll('.gallery-item');
       const buttons = document.querySelectorAll('.gallery-filter-btn');
@@ -1196,7 +1737,9 @@
       });
     }
 
-    // Visor Lightbox para la galería
+    // ---------------------------------------------------------
+    // LIGHTBOX MODAL
+    // ---------------------------------------------------------
     function openLightbox(element) {
       const img = element.querySelector('img');
       const titleEl = element.querySelector('h4');
@@ -1218,17 +1761,23 @@
       document.body.style.overflow = '';
     }
 
+    // Close on Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
     });
 
-    // Envío interactivo del formulario con respuesta visual
+    // ---------------------------------------------------------
+    // FORM SUBMISSION HANDLER
+    // ---------------------------------------------------------
     function handleContactSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById('form-submit-btn');
       const btnText = document.getElementById('submit-btn-text');
       const successBanner = document.getElementById('form-success');
 
+      // Feedback animation
       const originalText = btnText.textContent;
       btn.disabled = true;
       btnText.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
@@ -1239,16 +1788,239 @@
         successBanner.classList.remove('hidden');
         document.getElementById('contact-form').reset();
 
+        // Hide success banner after 6 seconds
         setTimeout(() => {
           successBanner.classList.add('hidden');
         }, 6000);
       }, 900);
     }
 
-    // Carga inicial y persistencia de idioma
+    // ---------------------------------------------------------
+    // GESTOR DE FOTOGRAFÍAS (PHOTO MANAGER & LOCAL STORAGE)
+    // ---------------------------------------------------------
+    let currentPendingImageSrc = null;
+
+    // Default original images mapping for rollback
+    const originalPhotos = {
+      'img-hero': 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1920&q=85',
+      'img-history-main': 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1000&q=80',
+      'img-history-sub': 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80',
+      'img-service-1': 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80',
+      'img-service-2': 'https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80',
+      'img-service-3': 'https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=800&q=80',
+      'img-gallery-1': 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80',
+      'img-gallery-2': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80',
+      'img-gallery-3': 'https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=80',
+      'img-gallery-4': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80',
+      'img-gallery-5': 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80',
+      'img-gallery-6': 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80'
+    };
+
+    function openPhotoManager() {
+      const modal = document.getElementById('photo-manager-modal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      switchPhotoTab('upload');
+    }
+
+    function openPhotoManagerWithSlot(slotId) {
+      openPhotoManager();
+      const select = document.getElementById('pm-slot-select');
+      if (select && slotId) {
+        select.value = slotId;
+      }
+    }
+
+    function closePhotoManager() {
+      const modal = document.getElementById('photo-manager-modal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      currentPendingImageSrc = null;
+      const previewCont = document.getElementById('pm-preview-container');
+      if (previewCont) previewCont.classList.add('hidden');
+    }
+
+    function switchPhotoTab(tab) {
+      const btnUpload = document.getElementById('tab-btn-upload');
+      const btnGuide = document.getElementById('tab-btn-guide');
+      const panelUpload = document.getElementById('panel-photo-upload');
+      const panelGuide = document.getElementById('panel-photo-guide');
+
+      if (tab === 'upload') {
+        btnUpload.className = "px-4 py-2.5 border-b-2 border-robles-forest text-robles-forest font-bold transition-all";
+        btnGuide.className = "px-4 py-2.5 border-b-2 border-transparent text-neutral-500 hover:text-neutral-800 transition-all";
+        panelUpload.classList.remove('hidden');
+        panelGuide.classList.add('hidden');
+      } else {
+        btnGuide.className = "px-4 py-2.5 border-b-2 border-robles-forest text-robles-forest font-bold transition-all";
+        btnUpload.className = "px-4 py-2.5 border-b-2 border-transparent text-neutral-500 hover:text-neutral-800 transition-all";
+        panelGuide.classList.remove('hidden');
+        panelUpload.classList.add('hidden');
+      }
+    }
+
+    // Read and compress image to keep localStorage healthy
+    function handleFileSelect(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        alert(currentLang === 'es' ? 'Por favor selecciona un archivo de imagen válido.' : 'Please select a valid image file.');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const maxDim = 1200;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height && width > maxDim) {
+            height = Math.round((height * maxDim) / width);
+            width = maxDim;
+          } else if (height > maxDim) {
+            width = Math.round((width * maxDim) / height);
+            height = maxDim;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.82);
+
+          currentPendingImageSrc = compressedDataUrl;
+          showPreview(compressedDataUrl, `${file.name} (${Math.round(compressedDataUrl.length / 1024)} KB)`);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function previewUrlImage() {
+      const urlInput = document.getElementById('pm-url-input');
+      const url = urlInput.value.trim();
+      if (!url) {
+        alert(currentLang === 'es' ? 'Ingresa una URL válida de imagen.' : 'Please enter a valid image URL.');
+        return;
+      }
+
+      const testImg = new Image();
+      testImg.onload = function() {
+        currentPendingImageSrc = url;
+        showPreview(url, url);
+      };
+      testImg.onerror = function() {
+        alert(currentLang === 'es' ? 'No se pudo cargar la imagen desde este enlace. Asegúrate de que la URL termine en .jpg, .png o sea pública.' : 'Could not load image from this URL. Ensure it is public and directly accessible.');
+      };
+      testImg.src = url;
+    }
+
+    function showPreview(src, info) {
+      const container = document.getElementById('pm-preview-container');
+      const img = document.getElementById('pm-preview-img');
+      const infoEl = document.getElementById('pm-preview-info');
+
+      img.src = src;
+      infoEl.textContent = info;
+      container.classList.remove('hidden');
+    }
+
+    function applyPhotoChange() {
+      if (!currentPendingImageSrc) {
+        alert(currentLang === 'es' ? 'Primero selecciona o pega una foto.' : 'Please select or paste a photo first.');
+        return;
+      }
+
+      const slotSelect = document.getElementById('pm-slot-select');
+      const slotId = slotSelect.value;
+      const targetImg = document.getElementById(slotId);
+
+      if (targetImg) {
+        targetImg.src = currentPendingImageSrc;
+
+        // Persist in localStorage
+        try {
+          const saved = JSON.parse(localStorage.getItem('finca_custom_photos') || '{}');
+          saved[slotId] = currentPendingImageSrc;
+          localStorage.setItem('finca_custom_photos', JSON.stringify(saved));
+        } catch (err) {
+          console.warn('Could not save photo to localStorage (quota exceeded or disabled):', err);
+        }
+
+        // Close modal and show notification
+        closePhotoManager();
+      }
+    }
+
+    function resetAllPhotos() {
+      const confirmMsg = currentLang === 'es'
+        ? '¿Deseas restaurar todas las fotos originales de la web?'
+        : 'Do you want to restore all original website photos?';
+      
+      if (confirm(confirmMsg)) {
+        localStorage.removeItem('finca_custom_photos');
+        for (const [id, src] of Object.entries(originalPhotos)) {
+          const el = document.getElementById(id);
+          if (el) el.src = src;
+        }
+        closePhotoManager();
+      }
+    }
+
+    function loadSavedPhotos() {
+      try {
+        const saved = JSON.parse(localStorage.getItem('finca_custom_photos') || '{}');
+        for (const [id, src] of Object.entries(saved)) {
+          const el = document.getElementById(id);
+          if (el) el.src = src;
+        }
+      } catch (e) {
+        console.error('Error loading saved photos', e);
+      }
+    }
+
+    // Drag and drop setup for drop-zone
+    const dropZone = document.getElementById('drop-zone');
+    if (dropZone) {
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.add('bg-robles-cream', 'border-robles-leaf');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.remove('bg-robles-cream', 'border-robles-leaf');
+        }, false);
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files && files.length > 0) {
+          const fakeEvent = { target: { files: files } };
+          handleFileSelect(fakeEvent);
+        }
+      }, false);
+    }
+
+    // ---------------------------------------------------------
+    // INITIALIZATION
+    // ---------------------------------------------------------
     window.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('finca_lang') || 'es';
       setLanguage(savedLang);
+      loadSavedPhotos();
     });
   </script>
 
