@@ -8,7 +8,7 @@
   <meta property="og:title" content="Finca Los Robles | San Cristóbal Alta Verapaz" />
   <meta property="og:description" content="Café de especialidad, licor artesanal y tradición cafetalera en el corazón de Alta Verapaz." />
   <meta property="og:type" content="website" />
-  <meta name="version" content="v2026.09.09" />
+  <meta name="version" content="v2026.10.01" />
 
   <!-- Favicon / Icono en pestaña del navegador (Logo Finca Los Robles) -->
   <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
@@ -1914,7 +1914,7 @@
         <div class="flex items-center gap-3 sm:gap-6">
           <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 text-robles-gold text-[11px] font-mono border border-robles-gold/30 shadow-2xs" title="Versión del Sistema">
             <i class="fa-solid fa-code-commit text-[10px]"></i>
-            <span>v2026.09.09</span>
+            <span>v2026.10.01</span>
           </span>
           <a href="#hero" class="hover:text-robles-gold transition-colors" data-i18n="btn_back_top">Volver arriba ↑</a>
         </div>
@@ -1929,7 +1929,7 @@
   <script>
     // Set dynamic current year and app version
     document.getElementById('current-year').textContent = new Date().getFullYear();
-    window.__APP_VERSION__ = "v2026.09.09";
+    window.__APP_VERSION__ = "v2026.10.01";
 
     // ---------------------------------------------------------
     // DICCIONARIO BILINGÜE COMPLETO (Español / English)
@@ -2568,92 +2568,93 @@
   </script>
 
   <!-- ========================================================= -->
-<!-- RASTREADOR DE TRÁFICO - FINCA LOS ROBLES (ANALÍTICA PRIVADA) -->
-<!-- Pegar antes de </body> en index.html de GitHub Pages      -->
-<!-- ========================================================= -->
-<script type="module">
-  (async function() {
-    try {
-      // Evita duplicar visitas en una misma sesión del navegador
-      const sessionKey = 'flr_v_' + new Date().toISOString().slice(0, 10);
-      if (sessionStorage.getItem(sessionKey)) return;
-
-      const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js');
-      const { getFirestore, collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js');
-
-      const app = initializeApp({
-        apiKey: "AIzaSyCm6676ihFlDMoKsBxzZtk9oHOC8yBsI88",
-        authDomain: "flr-db.firebaseapp.com",
-        projectId: "flr-db",
-        storageBucket: "flr-db.firebasestorage.app",
-        messagingSenderId: "778387910304",
-        appId: "1:778387910304:web:cff24e43422477f9bee3c5"
-      });
-      const db = getFirestore(app);
-
-      // Tipo de dispositivo
-      const ua = navigator.userAgent || '';
-      let dispositivo = 'Computadora';
-      if (/tablet|ipad/i.test(ua)) dispositivo = 'Tablet';
-      else if (/mobile|iphone|android/i.test(ua)) dispositivo = 'Móvil';
-
-      // Navegador
-      let navegador = 'Otro';
-      if (/chrome|crios/i.test(ua) && !/edge|opr\//i.test(ua)) navegador = 'Chrome';
-      else if (/safari/i.test(ua) && !/chrome/i.test(ua)) navegador = 'Safari';
-      else if (/firefox/i.test(ua)) navegador = 'Firefox';
-      else if (/edg/i.test(ua)) navegador = 'Edge';
-
-      // Origen del tráfico (Redes, buscador o enlace directo)
-      let fuente = 'Directo';
-      if (document.referrer) {
-        if (document.referrer.includes('whatsapp')) fuente = 'WhatsApp';
-        else if (document.referrer.includes('instagram')) fuente = 'Instagram';
-        else if (document.referrer.includes('facebook')) fuente = 'Facebook';
-        else if (document.referrer.includes('google')) fuente = 'Google';
-        else {
-          try { fuente = new URL(document.referrer).hostname; } catch(e){}
-        }
-      }
-
-      // Detección geográfica por IP (gratuita, sin cookies y silenciosa)
-      let geo = { pais: 'Guatemala', codigo: 'GT', region: 'Desconocida', ciudad: 'Desconocida' };
+  <!-- RASTREADOR DE TRÁFICO - FINCA LOS ROBLES (ANALÍTICA PRIVADA) -->
+  <!-- Pegar antes de </body> en index.html de GitHub Pages      -->
+  <!-- ========================================================= -->
+  <script type="module">
+    (async function() {
       try {
-        const res = await fetch('https://ipwho.is/?fields=country,country_code,region,city,success');
-        if (res.ok) {
-          const data = await res.json();
-          if (data && data.success !== false) {
-            geo.pais = data.country || geo.pais;
-            geo.codigo = data.country_code || geo.codigo;
-            geo.region = data.region || geo.region;
-            geo.ciudad = data.city || geo.ciudad;
+        // Evita duplicar visitas en una misma sesión del navegador
+        const sessionKey = 'flr_v_' + new Date().toISOString().slice(0, 10);
+        if (sessionStorage.getItem(sessionKey)) return;
+
+        const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js');
+        const { getFirestore, collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js');
+
+        const app = initializeApp({
+          apiKey: "AIzaSyCm6676ihFlDMoKsBxzZtk9oHOC8yBsI88",
+          authDomain: "flr-db.firebaseapp.com",
+          projectId: "flr-db",
+          storageBucket: "flr-db.firebasestorage.app",
+          messagingSenderId: "778387910304",
+          appId: "1:778387910304:web:cff24e43422477f9bee3c5"
+        });
+        const db = getFirestore(app);
+
+        // Tipo de dispositivo
+        const ua = navigator.userAgent || '';
+        let dispositivo = 'Computadora';
+        if (/tablet|ipad/i.test(ua)) dispositivo = 'Tablet';
+        else if (/mobile|iphone|android/i.test(ua)) dispositivo = 'Móvil';
+
+        // Navegador
+        let navegador = 'Otro';
+        if (/chrome|crios/i.test(ua) && !/edge|opr\//i.test(ua)) navegador = 'Chrome';
+        else if (/safari/i.test(ua) && !/chrome/i.test(ua)) navegador = 'Safari';
+        else if (/firefox/i.test(ua)) navegador = 'Firefox';
+        else if (/edg/i.test(ua)) navegador = 'Edge';
+
+        // Origen del tráfico (Redes, buscador o enlace directo)
+        let fuente = 'Directo';
+        if (document.referrer) {
+          if (document.referrer.includes('whatsapp')) fuente = 'WhatsApp';
+          else if (document.referrer.includes('instagram')) fuente = 'Instagram';
+          else if (document.referrer.includes('facebook')) fuente = 'Facebook';
+          else if (document.referrer.includes('google')) fuente = 'Google';
+          else {
+            try { fuente = new URL(document.referrer).hostname; } catch(e){}
           }
         }
-      } catch (e) {
-        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-        if (tz.includes('Guatemala')) { geo.pais = 'Guatemala'; geo.codigo = 'GT'; }
+
+        // Detección geográfica por IP (gratuita, sin cookies y silenciosa)
+        let geo = { pais: 'Guatemala', codigo: 'GT', region: 'Desconocida', ciudad: 'Desconocida' };
+        try {
+          const res = await fetch('https://ipwho.is/?fields=country,country_code,region,city,success');
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.success !== false) {
+              geo.pais = data.country || geo.pais;
+              geo.codigo = data.country_code || geo.codigo;
+              geo.region = data.region || geo.region;
+              geo.ciudad = data.city || geo.ciudad;
+            }
+          }
+        } catch (e) {
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+          if (tz.includes('Guatemala')) { geo.pais = 'Guatemala'; geo.codigo = 'GT'; }
+        }
+
+        // Registro seguro en Firestore
+        await addDoc(collection(db, "visitas_web"), {
+          fecha: new Date().toISOString(),
+          timestamp: serverTimestamp(),
+          pais: geo.pais,
+          paisCodigo: geo.codigo,
+          region: geo.region,
+          ciudad: geo.ciudad,
+          dispositivo: dispositivo,
+          navegador: navegador,
+          fuente: fuente,
+          idioma: navigator.language || 'es',
+          url: window.location.href
+        });
+
+        sessionStorage.setItem(sessionKey, '1');
+      } catch (err) {
+        console.debug('Analytics:', err);
       }
+    })();
+  </script>
 
-      // Registro seguro en Firestore
-      await addDoc(collection(db, "visitas_web"), {
-        fecha: new Date().toISOString(),
-        timestamp: serverTimestamp(),
-        pais: geo.pais,
-        paisCodigo: geo.codigo,
-        region: geo.region,
-        ciudad: geo.ciudad,
-        dispositivo: dispositivo,
-        navegador: navegador,
-        fuente: fuente,
-        idioma: navigator.language || 'es',
-        url: window.location.href
-      });
-
-      sessionStorage.setItem(sessionKey, '1');
-    } catch (err) {
-      console.debug('Analytics:', err);
-    }
-  })();
-</script>
 </body>
 </html>
