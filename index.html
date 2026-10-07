@@ -8,7 +8,7 @@
   <meta property="og:title" content="Finca Los Robles | San Cristóbal Alta Verapaz" />
   <meta property="og:description" content="Café de especialidad, licor artesanal y tradición cafetalera en el corazón de Alta Verapaz." />
   <meta property="og:type" content="website" />
-  <meta name="version" content="v2026.10.01" />
+  <meta name="version" content="v2026.10.02" />
 
   <!-- Favicon / Icono en pestaña del navegador (Logo Finca Los Robles) -->
   <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
@@ -196,7 +196,7 @@
       <!-- Top Badge -->
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 border border-robles-gold/50 backdrop-blur-md text-robles-gold text-xs sm:text-sm font-medium mb-6 shadow-lg">
         <i class="fa-solid fa-mountain-sun"></i>
-        <span data-i18n="hero_badge">Café de Altura & Tradición Artesanal</span>
+        <span data-i18n="hero_badge">Café de Altura SHB (1,600 msnm) & Tradición Artesanal</span>
       </div>
 
       <!-- Main Headline -->
@@ -225,7 +225,8 @@
       <div class="mt-16 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-12 text-center w-full max-w-3xl">
         <div class="flex flex-col">
           <span class="font-serif text-2xl sm:text-3xl font-bold text-robles-gold" data-i18n="stat_altitude_val">1,600 msnm</span>
-          <span class="text-xs sm:text-sm text-white/80" data-i18n="stat_altitude">Altitud Promedio</span>
+          <span class="text-xs sm:text-sm text-white/95 font-semibold" data-i18n="stat_altitude">Grano de Altura SHB</span>
+          <span class="text-[11px] text-robles-sand font-medium" data-i18n="stat_altitude_sub">Strictly Hard Bean</span>
         </div>
         <div class="flex flex-col">
           <span class="font-serif text-2xl sm:text-3xl font-bold text-robles-gold">100%</span>
@@ -273,7 +274,7 @@
         </h2>
         <div class="w-16 h-1 bg-robles-gold mx-auto my-4 rounded-full"></div>
         <p class="text-neutral-600 text-base sm:text-lg leading-relaxed" data-i18n="history_subtitle">
-          En 1985 comenzó una historia de valentía, aprendizaje junto a la comunidad y profundo amor a una tierra bendecida en San Cristóbal Alta Verapaz.
+          En 1985 comenzó una historia de valentía, aprendizaje junto a la comunidad y profundo amor a una tierra bendita en San Cristóbal Alta Verapaz.
         </p>
       </div>
 
@@ -472,7 +473,7 @@
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="absolute top-3 left-3 bg-robles-forest/90 text-robles-gold text-xs px-3 py-1 rounded-full font-medium tracking-wide shadow-sm flex items-center gap-1.5 border border-robles-gold/30">
-              <i class="fa-solid fa-seedling"></i> <span data-i18n="card1_badge">Café de Especialidad • 1,600 msnm</span>
+              <i class="fa-solid fa-mountain"></i> <span data-i18n="card1_badge">Grano de Altura SHB • 1,600 msnm</span>
             </div>
           </div>
           <div class="p-6 flex-1 flex flex-col">
@@ -480,10 +481,10 @@
               <i class="fa-solid fa-coffee"></i>
             </div>
             <h3 class="font-serif text-xl sm:text-2xl font-bold text-robles-forest mb-2" data-i18n="card1_title">
-              Café de Especialidad
+              Café de Especialidad (Grano de Altura SHB)
             </h3>
             <p class="text-neutral-600 text-sm leading-relaxed mb-3 flex-1" data-i18n="card1_desc">
-              Café Arábica de estricta altura cultivado a 1,600 msnm bajo sombra. Destaca por su perfil sensorial balanceado con fragancia y aroma a chocolate, manzanilla, naranja y panela; notas de sabor a miel, caramelo, chocolate, arándano y ciruela; acidez cítrica brillante, cuerpo sedoso y postgusto dulce prolongado.
+              Café Arábica de estricta altura (SHB - Strictly Hard Bean) cultivado a 1,600 msnm bajo sombra. Destaca por su perfil sensorial balanceado con fragancia y aroma a chocolate, manzanilla, naranja y panela; notas de sabor a miel, caramelo, chocolate, arándano y ciruela; acidez cítrica brillante, cuerpo sedoso y postgusto dulce prolongado.
             </p>
 
             <!-- Cupping Descriptors Chips -->
@@ -517,7 +518,7 @@
               </li>
               <li class="flex items-center gap-2">
                 <i class="fa-solid fa-check text-robles-leaf"></i>
-                <span data-i18n="card1_point2">Cosecha a 1,600 msnm • Trazabilidad 100%</span>
+                <span data-i18n="card1_point2">Grano Estrictamente Duro (SHB) • 1,600 msnm • Trazabilidad 100%</span>
               </li>
             </ul>
           </div>
@@ -1786,6 +1787,75 @@
 
       </div>
 
+      <!-- ========================================================= -->
+      <!-- RECUADRO DE UBICACIÓN EN GOOGLE MAPS (Café Finca Los Robles) -->
+      <!-- ========================================================= -->
+      <div id="mapa-finca" class="mt-14 bg-white rounded-3xl border border-neutral-200/90 shadow-xl overflow-hidden">
+        
+        <!-- Header Bar del Mapa estilo Google Maps -->
+        <div class="p-5 sm:p-6 bg-robles-cream border-b border-neutral-200/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start sm:items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-robles-forest text-robles-gold flex items-center justify-center text-xl shadow-md shrink-0">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="font-serif text-lg sm:text-xl font-bold text-robles-forest" data-i18n="map_card_title">
+                  Ubicación en Google Maps: Café Finca Los Robles
+                </h3>
+                <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-300">
+                  <i class="fa-solid fa-circle-check text-[10px]"></i>
+                  <span data-i18n="map_card_verified">Ubicación Oficial</span>
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm text-neutral-600 mt-1" data-i18n="map_card_desc">
+                San Cristóbal Alta Verapaz, Guatemala • 1,600 msnm en el corazón de la región cafetalera
+              </p>
+            </div>
+          </div>
+
+          <!-- Botones de Acción Directa con Google Maps -->
+          <div class="flex items-center gap-2.5 shrink-0">
+            <a
+              href="https://maps.app.goo.gl/ZM9zcAazC6LkXHh9A"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-robles-forest hover:bg-robles-forestLight text-white text-xs font-semibold transition-all shadow-md group"
+              title="Abrir indicaciones en Google Maps"
+            >
+              <i class="fa-solid fa-diamond-turn-right text-robles-gold group-hover:scale-110 transition-transform"></i>
+              <span data-i18n="map_card_btn_directions">Cómo Llegar ↗</span>
+            </a>
+            <a
+              href="https://www.google.com/maps/place/Caf%C3%A9+Finca+Los+Robles/@15.4118634,-90.4984563,17z"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-neutral-50 text-neutral-700 border border-neutral-300 text-xs font-semibold transition-all shadow-2xs"
+              title="Ver ficha completa en Google Maps"
+            >
+              <i class="fa-solid fa-up-right-from-square text-neutral-500"></i>
+              <span data-i18n="map_card_btn_fullscreen">Ver en Google Maps ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contenedor del Mapa Interactivo (Google Maps Oficial) -->
+        <div class="relative w-full h-[380px] sm:h-[460px] bg-neutral-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3849.5298539077977!2d-90.4984563248821!3d15.41186338517594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858a49701ad85867%3A0x91a45a00f85fc080!2sCaf%C3%A9%20Finca%20Los%20Robles!5e0!3m2!1ses!2sgt!4v1728264000000"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación Café Finca Los Robles en Google Maps"
+            class="w-full h-full"
+          ></iframe>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -1914,7 +1984,7 @@
         <div class="flex items-center gap-3 sm:gap-6">
           <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 text-robles-gold text-[11px] font-mono border border-robles-gold/30 shadow-2xs" title="Versión del Sistema">
             <i class="fa-solid fa-code-commit text-[10px]"></i>
-            <span>v2026.10.01</span>
+            <span>v2026.10.02</span>
           </span>
           <a href="#hero" class="hover:text-robles-gold transition-colors" data-i18n="btn_back_top">Volver arriba ↑</a>
         </div>
@@ -1929,7 +1999,7 @@
   <script>
     // Set dynamic current year and app version
     document.getElementById('current-year').textContent = new Date().getFullYear();
-    window.__APP_VERSION__ = "v2026.10.01";
+    window.__APP_VERSION__ = "v2026.10.02";
 
     // ---------------------------------------------------------
     // DICCIONARIO BILINGÜE COMPLETO (Español / English)
@@ -1997,12 +2067,14 @@
         btn_header_contact: "Contáctanos",
         btn_whatsapp: "WhatsApp Directo",
         hero_badge: "Café de Altura & Tradición Artesanal",
+        hero_badge: "Café de Altura SHB (1,600 msnm) & Tradición Artesanal",
         hero_title: "Café de especialidad y tradición familiar en las alturas de San Cristóbal Alta Verapaz.",
         hero_subtitle: "Cultivado a 1,600 msnm bajo la mística niebla del bosque nuboso guatemalteco, combinamos métodos agroforestales sustentables y pasión por cada grano.",
         hero_cta_history: "Conoce Nuestra Historia",
         hero_cta_contact: "Contáctanos",
         stat_altitude_val: "1,600 msnm",
-        stat_altitude: "Altitud Promedio",
+        stat_altitude: "Grano de Altura SHB",
+        stat_altitude_sub: "Strictly Hard Bean (1,600 msnm)",
         stat_harvest: "Cosecha Seleccionada",
         stat_process_val: "Sostenible",
         stat_process: "Cultivo Bajo Sombra",
@@ -2031,9 +2103,9 @@
         services_tag: "Nuestra Pasión Hecha Realidad",
         services_title: "¿Qué Hacemos en Finca Los Robles?",
         services_subtitle: "Desde granos selectos de especialidad hasta derivados artesanales exclusivos y experiencias de catación profesional.",
-        card1_badge: "Café de Especialidad • 1,600 msnm",
-        card1_title: "Café de Especialidad",
-        card1_desc: "Café Arábica de estricta altura cultivado a 1,600 msnm bajo sombra. Destaca por su perfil sensorial balanceado con fragancia y aroma a chocolate, manzanilla, naranja y panela; notas de sabor a miel, caramelo, chocolate, arándano y ciruela; acidez cítrica brillante, cuerpo sedoso y postgusto dulce prolongado.",
+        card1_badge: "Grano de Altura SHB • 1,600 msnm",
+        card1_title: "Café de Especialidad (Grano de Altura SHB)",
+        card1_desc: "Café Arábica de estricta altura (SHB - Strictly Hard Bean) cultivado a 1,600 msnm bajo sombra. Destaca por su perfil sensorial balanceado con fragancia y aroma a chocolate, manzanilla, naranja y panela; notas de sabor a miel, caramelo, chocolate, arándano y ciruela; acidez cítrica brillante, cuerpo sedoso y postgusto dulce prolongado.",
         card1_cupping_label: "Descriptores de Taza:",
         card1_cupping_sub: "Perfil Sensorial",
         desc_honey: "Miel",
@@ -2046,7 +2118,21 @@
         desc_panela: "Panela",
         desc_silky_body: "Cuerpo Sedoso",
         card1_point1: "Perfil sensorial con notas dulces, frutales y achocolatadas",
-        card1_point2: "Cosecha a 1,600 msnm • Trazabilidad 100%",
+        card1_point2: "Grano Estrictamente Duro (SHB) • 1,600 msnm • Trazabilidad 100%",
+        shb_tag: "Máxima Clasificación de Calidad en Guatemala",
+        shb_title: "¿Por Qué el Grano de Altura SHB (Strictly Hard Bean) es Superior?",
+        shb_subtitle: "Cultivado a 1,600 metros de altura en San Cristóbal Alta Verapaz: una garantía científica y sensorial de sabor insuperable que convence desde el primer sorbo.",
+        shb_p1_title: "Maduración Lenta en el Frío",
+        shb_p1_desc: "A 1,600 msnm, las bajas temperaturas nocturnas y la niebla constante retrasan el desarrollo de la cereza. Al madurar con calma, la planta concentra más azúcares naturales, mieles y nutrientes esenciales que no existen en cafetales de baja altura.",
+        shb_p2_title: "Grano Físicamente Más Denso",
+        shb_p2_desc: "Strictly Hard Bean significa que el grano es compacto y firme. Esta alta densidad celular encapsula los aceites aromáticos volátiles y resiste un tueste parejo sin quemarse, desprendiendo fragancias intensas de chocolate, frutos rojos y panela.",
+        shb_p3_title: "Dulzura Natural • Cero Amargor Áspero",
+        shb_p3_desc: "Para principiantes: ¡no necesitas azúcar! Ofrece un dulzor balanceado, cuerpo sedoso y notas a chocolate y miel. Para conocedores: acidez cítrica brillante, alta solubilidad y perfil galardonado con más de 87 puntos en certámenes SCA.",
+        map_card_title: "Ubicación en Google Maps: Café Finca Los Robles",
+        map_card_verified: "Ubicación Oficial",
+        map_card_desc: "San Cristóbal Alta Verapaz, Guatemala • 1,600 msnm en el corazón de la región cafetalera",
+        map_card_btn_directions: "Cómo Llegar ↗",
+        map_card_btn_fullscreen: "Ver en Google Maps ↗",
         card_honey_badge: "100% Pura • Cosecha de Montaña",
         card_honey_title: "Miel Pura de Abeja",
         card_honey_desc: "Miel 100% cruda cosechada en los apiarios de nuestra finca. Las abejas polinizan las flores de cafetales bajo sombra y la vegetación nativa de San Cristóbal Alta Verapaz, produciendo una miel de aroma floral silvestre, textura densa y altísima pureza.",
@@ -2225,13 +2311,14 @@
         nav_instagram: "Instagram @fincalosrobles.gt",
         btn_header_contact: "Contact Us",
         btn_whatsapp: "Direct WhatsApp",
-        hero_badge: "Highland Coffee & Artisanal Heritage",
+        hero_badge: "Highland SHB Coffee (1,600 masl) & Artisanal Heritage",
         hero_title: "Specialty coffee and family heritage in the highlands of San Cristóbal Alta Verapaz.",
         hero_subtitle: "Cultivated at 1,600 masl beneath the mystical cloud forest canopy of Guatemala, blending sustainable agroforestry with devoted craftsmanship in every single bean.",
         hero_cta_history: "Discover Our Story",
         hero_cta_contact: "Contact Us",
         stat_altitude_val: "1,600 masl",
-        stat_altitude: "Average Altitude",
+        stat_altitude: "Strictly Hard Bean (SHB)",
+        stat_altitude_sub: "High-Altitude Specialty (1,600 masl)",
         stat_harvest: "Handpicked Harvest",
         stat_process_val: "Sustainable",
         stat_process: "Shade-Grown Canopy",
@@ -2260,9 +2347,9 @@
         services_tag: "Our Craft in Action",
         services_title: "What We Do at Finca Los Robles",
         services_subtitle: "From single-origin specialty coffees to exclusive handcrafted fruit liquors and professional cupping laboratory experiences.",
-        card1_badge: "Specialty Coffee • 1,600 masl",
-        card1_title: "Specialty Coffee",
-        card1_desc: "Strictly high-grown Arabica coffee cultivated at 1,600 masl under native shade canopy. Distinguished by its balanced sensory profile with fragrance and aroma of chocolate, chamomile, orange, and panela; cup flavors of honey, caramel, chocolate, blueberry, and plum; bright citric acidity, silky body, and a sweet lingering finish.",
+        card1_badge: "Strictly Hard Bean (SHB) • 1,600 masl",
+        card1_title: "Specialty Coffee (Strictly Hard Bean - SHB)",
+        card1_desc: "Strictly high-grown Arabica coffee (SHB - Strictly Hard Bean) cultivated at 1,600 masl under native shade canopy. Distinguished by its balanced sensory profile with fragrance and aroma of chocolate, chamomile, orange, and panela; cup flavors of honey, caramel, chocolate, blueberry, and plum; bright citric acidity, silky body, and a sweet lingering finish.",
         card1_cupping_label: "Cup Profile Descriptors:",
         card1_cupping_sub: "Sensory Profile",
         desc_honey: "Honey",
@@ -2275,7 +2362,21 @@
         desc_panela: "Panela",
         desc_silky_body: "Silky Body",
         card1_point1: "Sensory profile featuring sweet, fruity, and chocolate notes",
-        card1_point2: "1,600 masl harvest • 100% single-lot traceability",
+        card1_point2: "Strictly Hard Bean (SHB) • 1,600 masl • 100% single-lot traceability",
+        shb_tag: "Guatemala's Premier Coffee Classification",
+        shb_title: "Why is Strictly Hard Bean (SHB) Highland Coffee Superior?",
+        shb_subtitle: "Cultivated at 1,600 meters in San Cristóbal Alta Verapaz: scientific and sensory assurance of supreme cup flavor from the very first sip.",
+        shb_p1_title: "Slow Mountain-Chill Maturation",
+        shb_p1_desc: "At 1,600 masl, cold mountain nights and dense cloud forest mist slow cherry development. Maturing slowly, the coffee tree concentrates dense natural sugars, honeys, and nutrients absent in lower altitudes.",
+        shb_p2_title: "Physically Denser, Harder Bean",
+        shb_p2_desc: "Strictly Hard Bean denotes exceptional bean density. This compact cellular structure locks in aromatic volatile oils and endures uniform roasting without scorching, unleashing rich cocoa, berry, and panela aromas.",
+        shb_p3_title: "Natural Sweetness • No Harsh Bitterness",
+        shb_p3_desc: "For newcomers: no sugar needed! Enjoy balanced natural sweetness, velvety mouthfeel, and chocolate-honey notes. For connoisseurs: sparkling citric acidity, optimal extraction yield, and 87+ SCA competition pedigree.",
+        map_card_title: "Google Maps Location: Café Finca Los Robles",
+        map_card_verified: "Official Location",
+        map_card_desc: "San Cristóbal Alta Verapaz, Guatemala • 1,600 masl in the heart of the coffee mountains",
+        map_card_btn_directions: "Get Directions ↗",
+        map_card_btn_fullscreen: "View on Google Maps ↗",
         card_honey_badge: "100% Pure • Mountain Harvest",
         card_honey_title: "Pure Raw Honey",
         card_honey_desc: "100% pure raw honey harvested from our estate apiaries nestled among shade-grown coffee and native mountain flora in San Cristóbal Alta Verapaz. Producing a rich, unpasteurized honey with wild floral bouquet, dense golden texture, and supreme natural purity.",
