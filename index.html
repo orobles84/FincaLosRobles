@@ -2567,5 +2567,93 @@
     });
   </script>
 
+  <!-- ========================================================= -->
+<!-- RASTREADOR DE TRÁFICO - FINCA LOS ROBLES (ANALÍTICA PRIVADA) -->
+<!-- Pegar antes de </body> en index.html de GitHub Pages      -->
+<!-- ========================================================= -->
+<script type="module">
+  (async function() {
+    try {
+      // Evita duplicar visitas en una misma sesión del navegador
+      const sessionKey = 'flr_v_' + new Date().toISOString().slice(0, 10);
+      if (sessionStorage.getItem(sessionKey)) return;
+
+      const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js');
+      const { getFirestore, collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js');
+
+      const app = initializeApp({
+        apiKey: "AIzaSyCm6676ihFlDMoKsBxzZtk9oHOC8yBsI88",
+        authDomain: "flr-db.firebaseapp.com",
+        projectId: "flr-db",
+        storageBucket: "flr-db.firebasestorage.app",
+        messagingSenderId: "778387910304",
+        appId: "1:778387910304:web:cff24e43422477f9bee3c5"
+      });
+      const db = getFirestore(app);
+
+      // Tipo de dispositivo
+      const ua = navigator.userAgent || '';
+      let dispositivo = 'Computadora';
+      if (/tablet|ipad/i.test(ua)) dispositivo = 'Tablet';
+      else if (/mobile|iphone|android/i.test(ua)) dispositivo = 'Móvil';
+
+      // Navegador
+      let navegador = 'Otro';
+      if (/chrome|crios/i.test(ua) && !/edge|opr\//i.test(ua)) navegador = 'Chrome';
+      else if (/safari/i.test(ua) && !/chrome/i.test(ua)) navegador = 'Safari';
+      else if (/firefox/i.test(ua)) navegador = 'Firefox';
+      else if (/edg/i.test(ua)) navegador = 'Edge';
+
+      // Origen del tráfico (Redes, buscador o enlace directo)
+      let fuente = 'Directo';
+      if (document.referrer) {
+        if (document.referrer.includes('whatsapp')) fuente = 'WhatsApp';
+        else if (document.referrer.includes('instagram')) fuente = 'Instagram';
+        else if (document.referrer.includes('facebook')) fuente = 'Facebook';
+        else if (document.referrer.includes('google')) fuente = 'Google';
+        else {
+          try { fuente = new URL(document.referrer).hostname; } catch(e){}
+        }
+      }
+
+      // Detección geográfica por IP (gratuita, sin cookies y silenciosa)
+      let geo = { pais: 'Guatemala', codigo: 'GT', region: 'Desconocida', ciudad: 'Desconocida' };
+      try {
+        const res = await fetch('https://ipwho.is/?fields=country,country_code,region,city,success');
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.success !== false) {
+            geo.pais = data.country || geo.pais;
+            geo.codigo = data.country_code || geo.codigo;
+            geo.region = data.region || geo.region;
+            geo.ciudad = data.city || geo.ciudad;
+          }
+        }
+      } catch (e) {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (tz.includes('Guatemala')) { geo.pais = 'Guatemala'; geo.codigo = 'GT'; }
+      }
+
+      // Registro seguro en Firestore
+      await addDoc(collection(db, "visitas_web"), {
+        fecha: new Date().toISOString(),
+        timestamp: serverTimestamp(),
+        pais: geo.pais,
+        paisCodigo: geo.codigo,
+        region: geo.region,
+        ciudad: geo.ciudad,
+        dispositivo: dispositivo,
+        navegador: navegador,
+        fuente: fuente,
+        idioma: navigator.language || 'es',
+        url: window.location.href
+      });
+
+      sessionStorage.setItem(sessionKey, '1');
+    } catch (err) {
+      console.debug('Analytics:', err);
+    }
+  })();
+</script>
 </body>
 </html>
